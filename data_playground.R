@@ -39,3 +39,4 @@ tibble(dbGetQuery(con,
 
 
 dbDisconnect(con)
+

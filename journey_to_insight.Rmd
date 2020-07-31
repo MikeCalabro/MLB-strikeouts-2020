@@ -1,0 +1,10 @@
+---
+title: "Deriving Insight From the Lahman Baseball Database"
+author: "Michael Calabro"
+date: "7/31/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
