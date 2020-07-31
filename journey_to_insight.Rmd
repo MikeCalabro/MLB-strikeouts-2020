@@ -221,4 +221,109 @@ There is certainly *some* correlation here - extra base hits and strikeouts have
 
 * Intuitively, you would expect a player who strikes out more to have a lower salary, and someone who hits more extra base hits to have a higher salary. Perhaps extra base hits have a larger effect on salary than strikeouts, so players are incentivized to hit extra base hits at the expense of striking out more for the sake of making more money in contract negotiations.  
 
-* I also want to look at what is more correlated with scoring runs - strikeouts or extra base hits. Perhaps extra base hits have a larger effect on scoring runs than strikeouts, so players are incentivized to hit extra base hits at the expense of striking out more for the sake of winning more games.  
+* I also want to look at what is more correlated with scoring runs - strikeouts or extra base hits. Perhaps extra base hits have a larger effect on scoring runs than strikeouts, so players are incentivized to hit extra base hits at the expense of striking out more for the sake of winning more games.
+
+<br>
+<u>
+<center>
+**Salary and Strikeouts**
+</center>
+</u>
+<br> 
+
+```{r}
+query <- "
+          SELECT *
+          FROM salaries
+          LIMIT 5
+         "
+
+kable_query(con, query)
+```
+
+```{r}
+query <-  "
+          SELECT 
+            playerID || ' ' || yearID AS player_and_year,
+            salary
+          FROM salaries
+          LIMIT 5
+          "
+
+kable_query(con, query)
+```
+
+```{r}
+query <-  "
+          SELECT
+            playerID || ' ' || yearID AS player_and_year,
+            playerID,
+            yearID,
+            teamID,
+            AB,
+            R,
+            H,
+            batting.'2B',
+            batting.'3B',
+            HR,
+            RBI,
+            BB,
+            SO
+          FROM batting
+          LIMIT 5
+          "
+
+kable_query(con, query)
+```
+
+Okay we've hit a roadblock. I am trying to combine these two tables together, but when I add certain "Where" conditions, it gets super slow. So I am going to try using dplyr to help me "filter".  
+That did not work either. 
+Fixing it by limitting my rows and columns to 
+
+```{r}
+query <-  "
+      WITH select_batting AS (
+          SELECT 
+            playerID || ' ' || yearID AS player_and_year,
+            CAST(SO AS FLOAT) / AB AS strikeouts_per_at_bat,
+            CAST(b.'3B' + b.'2B' + HR AS FLOAT) / AB AS xbh_per_at_bat,
+            CAST(HR AS FLOAT) / AB AS hr_per_at_bat
+          FROM batting AS b
+          WHERE (AB > 300) AND (yearID IS 2016)
+      ), select_salary AS (
+          SELECT
+            playerID || ' ' || yearID AS player_and_year,
+            salary
+          FROM salaries
+          WHERE yearID IS 2016
+      )
+      SELECT 
+        sb.*,
+        ss.salary /CAST(1000000 AS FLOAT) AS salary_millions
+      FROM select_batting AS sb
+      INNER JOIN select_salary AS ss ON ss.player_and_year = sb.player_and_year
+      WHERE salary_millions > 0
+          "
+
+head(dbGetQuery(con, query))
+
+dbGetQuery(con, query) %>%
+  ggplot(aes(x = strikeouts_per_at_bat, y = salary_millions)) +
+  geom_point() +
+  stat_smooth(geom='line', method = "lm", alpha=0.3, se=FALSE, color = "blue")
+
+```
+
+Obviously little to no correlation there. Interesting. To do this better I would want to know stats for a year before a contract is signed, but for now this is a fine approximation.
+
+```{r}
+dbGetQuery(con, query) %>%
+  ggplot(aes(x = hr_per_at_bat, y = salary_millions)) +
+  geom_point() +
+  stat_smooth(geom='line', method = "lm", alpha=0.3, se=FALSE, color = "blue")
+```
+
+Not much there either.
+
+
+
