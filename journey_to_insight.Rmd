@@ -1,5 +1,5 @@
 ---
-title: "Deriving Insight From the Lahman Baseball Database"
+title: "Deriving Insight From Lahman's Baseball Database"
 author: "Michael Calabro"
 date: "7/31/2020"
 output: html_document
@@ -8,3 +8,92 @@ output: html_document
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
+<br>
+Welcome to my journey_to_insight.Rmd file! In this markdown, I will be going step by step through my process of using the Lahman Baseball Database to seek answers to my question regarding Strikeouts in Major League Baseball.  
+<br>  
+<center>
+**What is the Lahman Baseball Database? And what is your question about MLB strikeouts?**
+</center>
+<br>
+The Lahman Baseball Database contains MLB statistics and data from 1871-2019...it contains nearly 250 years worth of MLB data to explore!  
+I downloaded the SQLite database into my RSTUDIO Project, and can access all of its information with the following commands.
+
+```{r, warning=FALSE, message=FALSE}
+# RSQLite library allows me to use SQLite
+# DBI library allows me to connect to the database
+# tidyverse contains many libraries, most notably ggplot2 for visualizations
+# kableExtra allows me to make my tables more presentable
+library(RSQLite)
+library(DBI)
+library(tidyverse)
+library(kableExtra)
+
+# Now I need to establish my connection to the Lahman database
+con <- dbConnect(SQLite(), 
+                 dbname = "lahmans_baseball_db.sqlite")
+```
+<br>  
+This "con" keyword now allows me to connect to the database. To view the list of tables in the database, I simply run the code below.  
+
+```{r}
+dbListTables(con)
+```
+<br>  
+To view data from a specific table, I use the dbGetQuery function. The "batting" table will be key to my analysis, let's check it out.
+
+```{r}
+# First I write out the query and assign it to "query"
+query <-  "
+          SELECT *
+          FROM batting
+          LIMIT 5
+          "
+
+# Then I send it through the DBGetQuery function, along with the "con" connection, to run the query
+dbGetQuery(con, query)
+
+# And for tables that aren't so wide, the kable funtion with kable_styling makes the table very presentable
+dbGetQuery(con, query) %>%
+  kable() %>%
+  kable_styling(full_width = FALSE, bootstrap_options = "bordered")
+
+# I like the kable and think I'll use it a lot, so I am going to make a function kable_query for efficiency
+kable_query <- function(con, query){
+  return(
+    dbGetQuery(con, query) %>%
+      kable() %>%
+      kable_styling(full_width = FALSE, bootstrap_options = "bordered")
+  )
+}
+```
+<br>  
+As we can see, every row in the batter table consists of a player, a year, and all of the player's batting statistics in that year.  
+<br>
+<center>
+**So What is your question about Strikeouts in the MLB?**
+</center>
+<br>  
+A few years back (in 2018 I believe) I read an article which mentioned the fact that MLB players are striking out more and more every year, always breaking the single season record for total strikeouts. A more updated article, linked [here](https://www.espn.com/mlb/story/_/id/27694758/mlb-sets-strikeout-record-12th-straight-season), notes that this increase in strikeouts has been happening every year since 2008! Let's see if our Lahman data shows the same trend.
+
+```{r}
+query <-  "
+          SELECT 
+            yearID,
+            SUM(SO) AS total_strikeouts
+          FROM batting
+          WHERE yearID > 2006
+          GROUP BY yearID
+          "
+
+kable_query(con, query)
+
+# Now I can use ggplot, with geom_point to make a scatterplot, geom_line to make a line graph, or both!
+# Also, using %>% allows me to "pipe" my data into certain functions, like ggplot
+dbGetQuery(con, query) %>%
+  ggplot(aes(x = yearID, y = total_strikeouts)) +
+  geom_point() +
+  geom_line() +
+  ggtitle("Yearly Total MLB Strikeouts From 2007-2019")
+```
+
+So what is causing this increase in strikeouts every year?? That is what I wish to investigate throughout the rest of this document and project.
