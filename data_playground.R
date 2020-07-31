@@ -34,8 +34,35 @@ tibble(dbGetQuery(con,
              size = 0.5)
 
 
+dbGetQuery(con, 
+                "
+                SELECT *
+                FROM people
+                LIMIT 5
+                ")
 
 
+tibble(dbGetQuery(con,
+                  "
+                  SELECT
+                    b.playerID,
+                    p.nameFirst || ' ' || p.nameLast AS name,
+                    SUM(b.HR) AS career_hr
+                  FROM batting AS b
+                  INNER JOIN people AS p ON p.playerID = b.playerID
+                  GROUP BY b.playerID
+                  ORDER BY career_hr DESC
+                  LIMIT 20
+                  "
+                  ))
+
+dbGetQuery(con, 
+           "
+           SELECT *
+           FROM salaries
+           ORDER BY yearID
+           LIMIT 20
+           ")
 
 
 dbDisconnect(con)

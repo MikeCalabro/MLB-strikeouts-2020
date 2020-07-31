@@ -15,8 +15,8 @@ Welcome to my journey_to_insight.Rmd file! In this markdown, I will be going ste
 **What is the Lahman Baseball Database? And what is your question about MLB strikeouts?**
 </center>
 <br>
-The Lahman Baseball Database contains MLB statistics and data from 1871-2019...it contains nearly 250 years worth of MLB data to explore!  
-I downloaded the SQLite database into my RSTUDIO Project, and can access all of its information with the following commands.
+The Lahman Baseball Database contains MLB statistics and data from 1871-2019...it contains nearly 250 years worth of MLB data to explore!  Documentation for the database and all of its tables and columns can be found using [this link](http://www.seanlahman.com/files/database/readme2019.txt).  
+I downloaded the SQLite database into my RStudio Project, and can access all of its information with the following commands.
 
 ```{r, warning=FALSE, message=FALSE}
 # RSQLite library allows me to use SQLite
@@ -96,4 +96,129 @@ dbGetQuery(con, query) %>%
   ggtitle("Yearly Total MLB Strikeouts From 2007-2019")
 ```
 
-So what is causing this increase in strikeouts every year?? That is what I wish to investigate throughout the rest of this document and project.
+So what is causing this increase in strikeouts every year?? That is what I wish to investigate throughout the rest of this document/project.  
+<br>
+<center>
+**HYPOTHOSES**
+</center>
+<br>
+
+* Perhaps there are just more at bats every year, while strikeouts per at bat is remaining constant 
+
+* Perhaps hitters are willing to strike out more often, in exchange for an increase in another statistic
+
+* Perhaps pitching skill is improving faster than batting skill in the MLB  
+
+<br>
+<u>
+<center>
+**Strikeouts Per At Bat**
+</center>
+</u>
+<br>  
+
+This hypothesis is pretty easy to check. We just need to divide total strikeouts by total at bats.
+
+```{r}
+query <-    "
+            SELECT 
+              yearID,
+              SUM(AB) AS total_at_bats,
+              SUM(SO) AS total_strikeouts,
+              CAST(SUM(SO) AS FLOAT) / SUM(AB) AS strikeouts_per_at_bat
+            FROM batting
+            WHERE yearID > 2006
+            GROUP BY yearID
+                  "
+
+kable_query(con, query)
+
+dbGetQuery(con, query) %>%
+  ggplot(aes(x = yearID, y = strikeouts_per_at_bat)) +
+  geom_line() +
+  ggtitle("Yearly Strikeouts Per At Bat In The MLB From 2007-2019")
+```
+
+Now the obvious question is: Have any other hitting stats been rising or falling in lockstep with the strikeouts stat?
+
+```{r}
+query <-    "
+            SELECT 
+              yearID,
+              CAST(SUM(SO) AS FLOAT) / SUM(AB) AS strikeouts_per_at_bat,
+              CAST(SUM(H) AS FLOAT) / SUM(AB) AS hits_per_at_bat,
+              CAST(SUM(HR) AS FLOAT) / SUM(AB) AS homeruns_per_at_bat,
+              CAST(SUM('2B') AS FLOAT) / SUM(AB) AS doubles_per_at_bat,
+              CAST(SUM('3B') AS FLOAT) / SUM(AB) AS triples_per_at_bat,
+              CAST(SUM('3B') + SUM('2B') + SUM(HR) AS FLOAT) / SUM(AB) AS xbh_per_at_bat,
+              CAST(SUM(BB) AS FLOAT) / SUM(AB) AS walks_per_at_bat
+            FROM batting
+            WHERE yearID > 2006
+            GROUP BY yearID
+            "
+
+kable_query(con, query)
+```
+
+Homeruns and extra base hits (xbh) are also much higher in 2019 than they were in 2007, but the jump was not as consistent as the gradual rise of strikeouts.
+
+```{r}
+dbGetQuery(con, query) %>%
+  ggplot(aes(x = yearID)) +
+  geom_line(aes(y = xbh_per_at_bat, color = "xbh per at bat")) +
+  geom_line(aes(y = homeruns_per_at_bat, color = "homeruns per at bat"))
+
+dbGetQuery(con, query) %>%
+  ggplot(aes(x = yearID)) +
+  geom_line(aes(y = xbh_per_at_bat, color = "xbh per at bat")) +
+  geom_line(aes(y = strikeouts_per_at_bat, color = "strikeouts per at bat"))
+```
+
+They don't appear to be too correlated. Let's check it out with a scatterplot.
+
+```{r}
+dbGetQuery(con, query) %>%
+  ggplot(aes(x = xbh_per_at_bat, y = strikeouts_per_at_bat)) +
+  geom_point() +
+  stat_smooth(geom='line', method = "lm", alpha=0.3, se=FALSE, color = "blue")
+```
+
+There appears to be some correlation between strikeouts and extra base hits, but it is not a very strong one, and there is some heteroskedasticity.  
+What if we go further back in time?
+
+```{r}
+query <-    "
+            SELECT 
+              yearID,
+              CAST(SUM(SO) AS FLOAT) / SUM(AB) AS strikeouts_per_at_bat,
+              CAST(SUM(H) AS FLOAT) / SUM(AB) AS hits_per_at_bat,
+              CAST(SUM(HR) AS FLOAT) / SUM(AB) AS homeruns_per_at_bat,
+              CAST(SUM('2B') AS FLOAT) / SUM(AB) AS doubles_per_at_bat,
+              CAST(SUM('3B') AS FLOAT) / SUM(AB) AS triples_per_at_bat,
+              CAST(SUM('3B') + SUM('2B') + SUM(HR) AS FLOAT) / SUM(AB) AS xbh_per_at_bat,
+              CAST(SUM(BB) AS FLOAT) / SUM(AB) AS walks_per_at_bat
+            FROM batting
+            WHERE yearID > 1920
+            GROUP BY yearID
+            "
+
+dbGetQuery(con, query) %>%
+  ggplot(aes(x = yearID)) +
+  geom_line(aes(y = xbh_per_at_bat, color = "xbh per at bat")) +
+  geom_line(aes(y = strikeouts_per_at_bat, color = "strikeouts per at bat"))
+
+dbGetQuery(con, query) %>%
+  ggplot(aes(x = xbh_per_at_bat, y = strikeouts_per_at_bat)) +
+  geom_point() +
+  stat_smooth(geom='line', method = "lm", alpha=0.3, se=FALSE, color = "blue")
+
+y <- dbGetQuery(con, query)$strikeouts_per_at_bat
+x <- dbGetQuery(con, query)$xbh_per_at_bat
+summary(lm(y ~ x))
+```
+
+There is certainly *some* correlation here - extra base hits and strikeouts have both been increasing in the MLB over time. But this doesn't confirm any specific hypothesis. What would we also expect to see as a trend?
+
+* Intuitively, you would expect a player who strikes out more to have a lower salary, and someone who hits more extra base hits to have a higher salary. Perhaps extra base hits have a larger effect on salary than strikeouts, so players are incentivized to hit extra base hits at the expense of striking out more for the sake of making more money in contract negotiations.  
+
+* I also want to look at what is more correlated with scoring runs - strikeouts or extra base hits. Perhaps extra base hits have a larger effect on scoring runs than strikeouts, so players are incentivized to hit extra base hits at the expense of striking out more for the sake of winning more games.  
