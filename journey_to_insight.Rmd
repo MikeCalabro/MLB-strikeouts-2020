@@ -323,7 +323,118 @@ dbGetQuery(con, query) %>%
   stat_smooth(geom='line', method = "lm", alpha=0.3, se=FALSE, color = "blue")
 ```
 
-Not much there either.
+Not much there either.  
 
+Now I'm going to see the correlation of strikeouts with runs scored, and the correlation of xbh with runs scroed for teams in certain years.
 
+```{r}
+query <-  "
+          SELECT 
+            yearID,
+            teamID,
+            CAST(SUM(R) AS FLOAT) / SUM(AB)  AS runs_scored_per_at_bat,
+            CAST(SUM(SO) AS FLOAT) / SUM(AB) AS team_strikeouts_per_at_bat,
+            SUM(b.'2B') + SUM(b.'3B') + SUM(HR) / CAST(SUM(AB) AS FLOAT) AS team_xbh_per_at_bat
+          FROM batting AS b
+          WHERE yearID > 1960
+          GROUP BY yearID, teamID
+          "
 
+head(dbGetQuery(con, query))
+
+dbGetQuery(con, query) %>%
+  ggplot(aes(x = team_strikeouts_per_at_bat, y = runs_scored_per_at_bat)) +
+  geom_point(aes(color = yearID)) +
+  stat_smooth(geom='line', method = "lm", alpha=0.3, se=FALSE, color = "blue")
+
+dbGetQuery(con, query) %>%
+  ggplot(aes(x = team_xbh_per_at_bat, y = runs_scored_per_at_bat)) +
+  geom_point(aes(color = yearID)) +
+  stat_smooth(geom='line', method = "lm", alpha=0.3, se=FALSE, color = "blue")
+```
+
+SO I think this is interesting. It seems as though strikeouts per at bat has nearly no correlation with the amount of runs a team scores, while extra base hits has a decent, clear correlation.  
+
+Let's see if this relationship holds in, say, the 2000s
+
+```{r}
+query <-  "
+          SELECT 
+            yearID,
+            teamID,
+            CAST(SUM(R) AS FLOAT) / SUM(AB)  AS runs_scored_per_at_bat,
+            CAST(SUM(SO) AS FLOAT) / SUM(AB) AS team_strikeouts_per_at_bat,
+            SUM(b.'2B') + SUM(b.'3B') + SUM(HR) / CAST(SUM(AB) AS FLOAT) AS team_xbh_per_at_bat
+          FROM batting AS b
+          WHERE yearID > 1999
+          GROUP BY yearID, teamID
+          "
+
+head(dbGetQuery(con, query))
+
+dbGetQuery(con, query) %>%
+  ggplot(aes(x = team_strikeouts_per_at_bat, y = runs_scored_per_at_bat)) +
+  geom_point(aes(color = yearID)) +
+  stat_smooth(geom='line', method = "lm", alpha=0.3, se=FALSE, color = "blue")
+
+dbGetQuery(con, query) %>%
+  ggplot(aes(x = team_xbh_per_at_bat, y = runs_scored_per_at_bat)) +
+  geom_point(aes(color = yearID)) +
+  stat_smooth(geom='line', method = "lm", alpha=0.3, se=FALSE, color = "blue")
+```
+
+The correlation of strikeouts to runs is still weaker than the correlation between extra base hits and runs. Which points to the idea that teams/players would be willing to risk getting x more strikeouts if it came with getting x more extra base hits in a season.
+
+```{r}
+y <- dbGetQuery(con, query)$runs_scored_per_at_bat
+x <- dbGetQuery(con, query)$team_strikeouts_per_at_bat
+
+#Prints the R-squared of the regression of runs scored on strikeouts
+summary(lm(y ~ x))$r.squared
+```
+
+```{r}
+y <- dbGetQuery(con, query)$runs_scored_per_at_bat
+x <- dbGetQuery(con, query)$team_xbh_per_at_bat
+
+#Prints the R-squared of the regression of runs scored on extra base hits
+summary(lm(y ~ x))$r.squared
+```
+
+There seems to be some legs here. Another trend I would expect to see is that batters who have increased the average exit velocities of their hits have gotten more extra base hits and also strike out more. And I would also expect to see the average exit velocity for hitters in the MLB to be increasing over time. So I need to see if I can find some new data to investigate these hypotheses.  
+
+I am pretty sure the MLB started keeping stats like exit velocity around 2000, so I am going to do a little hunting on the internet.  
+
+I found some data from 2008-2019 which includes a Hard Hit %, which I think will act similarly to exit velocity in analysis.
+
+```{r}
+fangraphs_batting <- read_csv("fangraphs_batting.csv")
+
+head(fangraphs_batting)
+
+fangraphs_batting %>%
+  group_by(Season) %>%
+  summarise(count = n())
+```
+
+There are a similar number of observations for every season. Let's see if strikeouts/hard hit % have been increasing for this sample of players.
+
+```{r}
+fangraphs_batting %>%
+  group_by(Season) %>%
+  summarise(count = n(),
+            so_per_ab = sum(SO) / sum(AB),
+            avg_hard_percentage = mean(Hard_Percent))
+
+fangraphs_batting %>%
+  group_by(Season) %>%
+  summarise(count = n(),
+            so_per_ab = sum(SO) / sum(AB),
+            avg_hard_percentage = mean(Hard_Percent)) %>%
+  ggplot(aes(x = Season)) +
+  geom_line(aes(y = so_per_ab, color = "strikeouts per at bat")) +
+  geom_line(aes(y = avg_hard_percentage, color = "average hard hit ball per ball in play")) +
+  ylab("percentage")
+```
+<br>
+The strikeout pattern is not the same as the one for all players, but it is quite similar. Also, the hard hit percentage has risen dramatically, especially in the last few years, as the strikeout percentage has similarly been rising dramatically. 
