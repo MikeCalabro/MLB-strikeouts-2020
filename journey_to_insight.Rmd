@@ -557,9 +557,9 @@ IPOuts appears to be a stat showing the number of outs that pitcher got that sea
 ```{r}
 query <-  "
           SELECT 
-            pi.playerID,
             pe.nameFirst || ' ' || pe.nameLast AS name,
-            yearID AS rookie_year,
+            pe.debut AS first_game_date,
+            SUM(GS) AS career_starts,
             SUM(IPouts) AS career_outs,
             SUM(SO) AS career_strikeouts,
             ROUND(CAST(SUM(SO) AS FLOAT) / SUM(IPouts), 3) AS strikeout_percentage
@@ -574,3 +574,10 @@ query <-  "
 kable_query(con, query)
 ```
 
+Some clear observations here:
+
+* These guys are pretty much all relief pitchers
+
+* The list is heavily populated with current MLB pitchers
+
+* Of the names I recognize, these pitchers throw HEAT
