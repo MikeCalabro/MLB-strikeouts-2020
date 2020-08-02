@@ -581,3 +581,14 @@ Some clear observations here:
 * The list is heavily populated with current MLB pitchers
 
 * Of the names I recognize, these pitchers throw HEAT
+
+<br>
+
+I have downloaded some pitching data [from Fangraphs](https://www.fangraphs.com/leaders.aspx?pos=all&stats=pit&lg=all&qual=y&type=c,7,8,13,-1,36,75,76&season=2019&month=0&season1=2007&ind=1&team=&rost=&age=&filter=&players=&startdate=&enddate=). Now I can look at the correlation between fastball speed and strikeouts more precisely.
+
+```{r}
+fangraphs_pitching <- read_csv("fangraphs_pitching")
+
+head(fangraphs_pitching)
+```
+

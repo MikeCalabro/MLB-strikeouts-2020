@@ -1,0 +1,1016 @@
+Season,Name,Team,G,GS,IP,so_per_nine,FB_percent,FBv,playerid
+2015,Zack Greinke,Dodgers,32,32,222.2,8.08,0.507,91.8,1943
+2018,Jacob deGrom,Mets,32,32,217,11.16,0.521,96,10954
+2015,Jake Arrieta,Cubs,33,33,229,9.28,0.507,94.6,4153
+2014,Clayton Kershaw,Dodgers,27,27,198.1,10.85,0.554,93,2036
+2013,Clayton Kershaw,Dodgers,33,33,236,8.85,0.607,92.6,2036
+2018,Blake Snell,Rays,31,31,180.2,11.01,0.515,95.8,13543
+2015,Clayton Kershaw,Dodgers,33,33,232.2,11.64,0.539,93.6,2036
+2016,Kyle Hendricks,Cubs,31,30,190,8.05,0.652,87.8,12049
+2014,Felix Hernandez,Mariners,34,34,236,9.46,0.434,92.4,4772
+2009,Zack Greinke,Royals,33,33,229.1,9.5,0.594,93.7,1943
+2014,Chris Sale,White Sox,26,26,174,10.76,0.529,93.8,10603
+2013,Jose Fernandez,Marlins,28,28,172.2,9.75,0.573,94.9,11530
+2018,Trevor Bauer,Indians,28,27,175.1,11.34,0.421,94.5,12703
+2009,Chris Carpenter,Cardinals,28,28,192.2,6.73,0.466,93,1292
+2014,Johnny Cueto,Reds,34,34,243.2,8.94,0.474,93.1,6893
+2017,Corey Kluber,Indians,29,29,203.2,11.71,0.425,92.6,2429
+2013,Matt Harvey,Mets,26,26,178.1,9.64,0.569,95.8,11713
+2010,Felix Hernandez,Mariners,34,34,249.2,8.36,0.607,94.1,4772
+2011,Clayton Kershaw,Dodgers,33,33,233.1,9.57,0.653,93.4,2036
+2010,Josh Johnson,Marlins,28,28,183.2,9.11,0.619,94.9,4567
+2017,Clayton Kershaw,Dodgers,27,27,175,10.39,0.471,92.7,2036
+2019,Hyun-Jin Ryu,Dodgers,29,29,182.2,8.03,0.406,90.6,14444
+2010,Clay Buchholz,Red Sox,28,28,173.2,6.22,0.541,94.1,3543
+2011,Roy Halladay,Phillies,32,32,233.2,8.47,0.226,92,1303
+2018,Aaron Nola,Phillies,33,33,212.1,9.49,0.496,92.4,16149
+2014,Adam Wainwright,Cardinals,32,32,227,7.1,0.407,90.2,2233
+2011,Cliff Lee,Phillies,32,32,232.2,9.21,0.535,91.5,1636
+2011,Justin Verlander,Tigers,34,34,251,8.96,0.570,95,8700
+2011,Jered Weaver,Angels,33,33,235.2,7.56,0.568,89.1,4235
+2014,Doug Fister,Nationals,25,25,164,5.38,0.637,87.9,9425
+2010,Adam Wainwright,Cardinals,33,33,230.1,8.32,0.464,91.1,2233
+2019,Jacob deGrom,Mets,32,32,204,11.25,0.495,96.9,10954
+2010,Roy Halladay,Phillies,33,33,250.2,7.86,0.374,92.6,1303
+2016,Jon Lester,Cubs,32,32,202.2,8.75,0.586,92.1,4930
+2014,Corey Kluber,Indians,34,34,235.2,10.27,0.524,93.2,2429
+2015,David Price,- - -,32,32,220.1,9.19,0.534,94.2,3184
+2014,Jon Lester,- - -,32,32,219.2,9.01,0.502,91.8,4930
+2014,Cole Hamels,Phillies,30,30,204.2,8.71,0.519,92.3,4972
+2009,Tim Lincecum,Giants,32,32,225.1,10.42,0.559,92.4,5705
+2015,Dallas Keuchel,Astros,33,33,232,8.38,0.561,89.6,9434
+2009,Felix Hernandez,Mariners,34,34,238.2,8.18,0.631,94,4772
+2019,Gerrit Cole,Astros,33,33,212.1,13.82,0.540,97.2,13125
+2017,Max Scherzer,Nationals,31,31,200.2,12.02,0.487,94.1,3137
+2017,Stephen Strasburg,Nationals,28,28,175.1,10.47,0.519,95.6,10131
+2018,Justin Verlander,Astros,34,34,214,12.2,0.613,95.1,8700
+2018,Max Scherzer,Nationals,33,33,220.2,12.24,0.503,94.4,3137
+2012,Clayton Kershaw,Dodgers,33,33,227.2,9.05,0.620,93.2,2036
+2008,Johan Santana,Mets,34,34,234.1,7.91,0.596,91.2,755
+2007,Jake Peavy,Padres,34,34,223.1,9.67,0.576,92.5,1051
+2008,Cliff Lee,Indians,31,31,223.1,6.85,0.701,90.5,1636
+2015,Jacob deGrom,Mets,30,30,191,9.66,0.618,95,10954
+2012,David Price,Rays,31,31,211,8.74,0.607,95.5,3184
+2013,Anibal Sanchez,Tigers,29,29,182,9.99,0.473,93,3284
+2019,Justin Verlander,Astros,34,34,223,12.11,0.499,94.7,8700
+2009,Jair Jurrjens,Braves,34,34,215,6.36,0.621,91.2,5556
+2015,Gerrit Cole,Pirates,32,32,208,8.74,0.671,95.6,13125
+2016,Noah Syndergaard,Mets,31,30,183.2,10.68,0.591,98,11762
+2014,Garrett Richards,Angels,26,26,168.2,8.75,0.638,96.3,9784
+2008,Tim Lincecum,Giants,34,33,227,10.51,0.661,94.1,5705
+2009,Adam Wainwright,Cardinals,34,34,233,8.19,0.498,90.9,2233
+2013,Zack Greinke,Dodgers,28,28,177.2,7.5,0.551,91.7,1943
+2012,Justin Verlander,Tigers,33,33,238.1,9.03,0.559,94.3,8700
+2014,Henderson Alvarez,Marlins,30,30,187,5.34,0.636,93.5,5669
+2013,Bartolo Colon,Athletics,30,30,190.1,5.53,0.855,89.9,375
+2014,Jordan Zimmermann,Nationals,32,32,199.2,8.2,0.703,93.8,4505
+2013,Hisashi Iwakuma,Mariners,33,33,219.2,7.58,0.530,89.5,13048
+2019,Mike Soroka,Braves,29,29,174.2,7.32,0.634,92.5,18383
+2010,Jaime Garcia,Cardinals,28,28,163.1,7.27,0.556,90.3,8137
+2008,CC Sabathia,- - -,35,35,253,8.93,0.539,93.7,404
+2011,Ryan Vogelsong,Giants,30,28,179.2,6.96,0.559,91.4,1011
+2015,Matt Harvey,Mets,29,29,189.1,8.94,0.609,95.9,11713
+2014,Zack Greinke,Dodgers,32,32,202.1,9.21,0.538,91.9,1943
+2010,David Price,Rays,32,31,208.2,8.11,0.740,94.6,3184
+2015,Sonny Gray,Athletics,31,31,208,7.31,0.605,92.9,12768
+2012,R.A. Dickey,Mets,34,33,233.2,8.86,0.140,83.4,1245
+2011,Tim Lincecum,Giants,33,33,217,9.12,0.529,92.3,5705
+2016,Madison Bumgarner,Giants,34,34,226.2,9.97,0.483,90.9,5524
+2014,Lance Lynn,Cardinals,33,33,203.2,8,0.790,92.4,2520
+2019,Jack Flaherty,Cardinals,33,33,196.1,10.59,0.582,93.9,17479
+2010,Roy Oswalt,- - -,33,32,211.2,8.21,0.553,92.6,571
+2015,John Lackey,Cardinals,33,33,218,7.22,0.676,91.6,1507
+2013,Madison Bumgarner,Giants,31,31,201.1,8.9,0.385,91.4,5524
+2014,Alex Wood,Braves,35,24,171.2,8.91,0.595,89.8,13781
+2012,Johnny Cueto,Reds,33,33,217,7.05,0.543,92.7,6893
+2008,Roy Halladay,Blue Jays,34,33,246,7.54,0.407,92.7,1303
+2016,Johnny Cueto,Giants,32,32,219.2,8.11,0.499,91.5,6893
+2009,Roy Halladay,Blue Jays,32,32,239,7.83,0.317,92.6,1303
+2009,Clayton Kershaw,Dodgers,31,30,171,9.74,0.720,93.9,2036
+2012,Matt Cain,Giants,32,32,219.1,7.92,0.506,91.2,4732
+2011,Cole Hamels,Phillies,32,31,216,8.08,0.450,91.7,4972
+2015,Max Scherzer,Nationals,33,33,228.2,10.86,0.594,94.2,3137
+2014,Tyson Ross,Padres,31,31,195.2,8.97,0.551,93.2,7872
+2012,Jered Weaver,Angels,30,30,188.2,6.77,0.619,87.8,4235
+2011,James Shields,Rays,33,33,249.1,8.12,0.364,91,7059
+2018,Miles Mikolas,Cardinals,32,32,200.2,6.55,0.485,93.9,9803
+2016,Tanner Roark,Nationals,34,33,210,7.37,0.624,92.1,8753
+2011,Doug Fister,- - -,32,31,216.1,6.07,0.570,90,9425
+2013,Yu Darvish,Rangers,32,32,209.2,11.89,0.382,92.9,13074
+2010,Tim Hudson,Braves,34,34,228.2,5.47,0.638,91.2,921
+2010,R.A. Dickey,Mets,27,26,174.1,5.37,0.162,83.9,1245
+2018,Kyle Freeland,Rockies,33,33,202.1,7.7,0.524,91.6,16256
+2008,Jake Peavy,Padres,27,27,173.2,8.6,0.574,92.1,1051
+2018,Mike Foltynewicz,Braves,31,31,183,9.93,0.563,96.4,10811
+2014,Tanner Roark,Nationals,31,31,198.2,6.25,0.668,91.1,8753
+2012,Kyle Lohse,Cardinals,33,33,211,6.1,0.530,89.5,739
+2016,Jose Fernandez,Marlins,29,29,182.1,12.49,0.537,95.2,11530
+2014,Alex Cobb,Rays,27,27,166.1,8.06,0.419,91.7,6562
+2013,Cliff Lee,Phillies,31,31,222.2,8.97,0.549,90.7,1636
+2009,Javier Vazquez,Braves,32,32,219.1,9.77,0.499,91.1,801
+2019,Sonny Gray,Reds,31,31,175.1,10.52,0.472,93.3,12768
+2018,Gerrit Cole,Astros,32,32,200.1,12.4,0.563,96.6,13125
+2011,Ian Kennedy,Diamondbacks,33,33,222,8.03,0.635,90.3,6986
+2010,Ubaldo Jimenez,Rockies,33,33,221.2,8.69,0.614,96.1,3374
+2011,Matt Cain,Giants,33,33,221.2,7.27,0.547,91.2,4732
+2018,Corey Kluber,Indians,33,33,215,9.29,0.416,92,2429
+2017,Robbie Ray,Diamondbacks,28,28,162,12.11,0.593,94.3,11486
+2012,Gio Gonzalez,Nationals,32,32,199.1,9.35,0.708,93.1,7448
+2011,Josh Beckett,Red Sox,30,30,193,8.16,0.508,93.1,510
+2014,Julio Teheran,Braves,33,33,221,7.57,0.609,90.4,6797
+2009,Matt Cain,Giants,33,33,217.2,7.07,0.628,92.6,4732
+2013,Max Scherzer,Tigers,32,32,214.1,10.08,0.560,93.3,3137
+2017,Chris Sale,Red Sox,32,32,214.1,12.93,0.492,94.4,10603
+2008,Daisuke Matsuzaka,Red Sox,29,29,167.2,8.27,0.522,91.8,7775
+2010,Clayton Kershaw,Dodgers,32,32,204.1,9.34,0.716,92.5,2036
+2011,Ricky Romero,Blue Jays,32,32,225,7.12,0.605,92.1,3403
+2010,Mat Latos,Padres,31,31,184.2,9.21,0.598,93.7,3815
+2019,Max Scherzer,Nationals,27,27,172.1,12.69,0.483,94.9,3137
+2014,Dallas Keuchel,Astros,29,29,200,6.57,0.573,89.7,9434
+2015,Madison Bumgarner,Giants,32,32,218.1,9.65,0.496,92.1,5524
+2009,J.A. Happ,Phillies,35,23,166,6.45,0.697,89.7,7410
+2019,Zack Greinke,- - -,33,33,208.2,8.07,0.465,90,1943
+2011,C.J. Wilson,Rangers,34,34,223.1,8.3,0.532,91,3580
+2013,Adam Wainwright,Cardinals,34,34,241.2,8.16,0.405,91.1,2233
+2012,Jordan Zimmermann,Nationals,32,32,195.2,7.04,0.625,93.9,4505
+2011,Jeremy Hellickson,Rays,29,29,189,5.57,0.559,91,4371
+2017,Gio Gonzalez,Nationals,32,32,201,8.42,0.566,89.9,7448
+2016,Max Scherzer,Nationals,34,34,228.1,11.19,0.554,94.3,3137
+2008,Ryan Dempster,Cubs,33,33,206.2,8.14,0.559,91.1,517
+2010,Trevor Cahill,Athletics,30,30,196.2,5.4,0.641,90.4,6249
+2017,Luis Severino,Yankees,31,31,193.1,10.71,0.514,97.6,15890
+2014,Madison Bumgarner,Giants,33,33,217.1,9.07,0.435,92.1,5524
+2010,Johan Santana,Mets,29,29,199,6.51,0.587,89.4,755
+2014,Jeff Samardzija,- - -,33,33,219.2,8.28,0.552,94.4,3254
+2011,CC Sabathia,Yankees,33,33,237.1,8.72,0.591,93.8,404
+2013,Stephen Strasburg,Nationals,30,30,183,9.39,0.610,95.3,10131
+2013,Hyun-Jin Ryu,Dodgers,30,30,192,7.22,0.542,90.3,14444
+2016,Aaron Sanchez,Blue Jays,30,30,192,7.55,0.743,94.7,11490
+2015,Carlos Martinez,Cardinals,31,29,179.2,9.22,0.570,95.3,11682
+2007,Brandon Webb,Diamondbacks,34,34,236.1,7.39,0.735,88.3,1692
+2010,Jered Weaver,Angels,34,34,224.1,9.35,0.561,89.9,4235
+2007,John Lackey,Angels,33,33,224,7.19,0.621,90.9,1507
+2018,Mike Clevinger,Indians,32,32,200,9.32,0.529,93.6,12808
+2009,Wandy Rodriguez,Astros,33,33,205.2,8.45,0.571,90.2,2586
+2015,Shelby Miller,Braves,33,33,205.1,7.5,0.667,94,10197
+2019,Clayton Kershaw,Dodgers,29,28,178.1,9.54,0.441,90.4,2036
+2015,Lance Lynn,Cardinals,31,31,175.1,8.57,0.854,91.7,2520
+2007,Brad Penny,Dodgers,33,33,208,5.84,0.717,93.4,535
+2014,Edinson Volquez,Pirates,32,31,192.2,6.54,0.554,93.2,3990
+2013,Felix Hernandez,Mariners,31,31,204.1,9.51,0.535,91.9,4772
+2016,Carlos Martinez,Cardinals,31,31,195.1,8.02,0.582,95.6,11682
+2016,Justin Verlander,Tigers,34,34,227.2,10.04,0.573,93.5,8700
+2012,Chris Sale,White Sox,30,29,192,9,0.601,91.6,10603
+2009,Randy Wells,Cubs,27,27,165.1,5.66,0.554,89.6,4535
+2012,Cole Hamels,Phillies,31,31,215.1,9.03,0.466,91.2,4972
+2019,Charlie Morton,Rays,33,33,194.2,11.1,0.490,94.4,4676
+2007,Roberto Hernandez,Indians,32,32,215,5.73,0.750,93.5,3273
+2010,Cole Hamels,Phillies,33,33,208.2,9.1,0.544,92,4972
+2013,Shelby Miller,Cardinals,31,31,173.1,8.78,0.713,93.7,10197
+2012,Felix Hernandez,Mariners,33,33,232,8.65,0.559,92.1,4772
+2016,Masahiro Tanaka,Yankees,31,31,199.2,7.44,0.316,90.6,15764
+2013,Chris Sale,White Sox,30,30,214.1,9.49,0.514,93.1,10603
+2007,Dan Haren,Athletics,34,34,222.2,7.76,0.517,91.7,1757
+2010,Jonathan Sanchez,Giants,34,33,193.1,9.54,0.650,90.6,7507
+2011,Hiroki Kuroda,Dodgers,32,32,202,7.17,0.608,92,3283
+2014,Sonny Gray,Athletics,33,33,219,7.52,0.556,93,12768
+2008,Ben Sheets,Brewers,31,31,198.1,7.17,0.618,92.6,710
+2013,Andrew Cashner,Padres,31,26,175,6.58,0.634,94.5,8782
+2008,Cole Hamels,Phillies,33,33,227.1,7.76,0.548,90.4,4972
+2017,Marcus Stroman,Blue Jays,33,33,201,7.34,0.621,93.3,13431
+2015,Scott Kazmir,- - -,31,31,183,7.62,0.578,91.3,4897
+2016,Jake Arrieta,Cubs,31,31,197.1,8.67,0.655,93.7,4153
+2009,Ted Lilly,Cubs,27,27,177,7.68,0.511,87.1,833
+2012,Jeremy Hellickson,Rays,31,31,177,6.31,0.524,91.4,4371
+2013,Travis Wood,Cubs,32,32,200,6.48,0.459,88.9,9884
+2013,Kris Medlen,Braves,32,31,197,7.17,0.553,89.4,9417
+2007,John Smoltz,Braves,32,32,205.2,8.62,0.449,92.5,115
+2018,Trevor Williams,Pirates,31,31,170.2,6.64,0.696,90.5,16977
+2011,Gio Gonzalez,Athletics,32,32,202,8.78,0.647,92.5,7448
+2007,Chris Young,Padres,30,30,173,8.69,0.747,88.7,3196
+2018,Charlie Morton,Astros,30,30,167,10.83,0.583,95.7,4676
+2009,Johan Santana,Mets,25,25,166.2,7.88,0.596,90.5,755
+2015,Marco Estrada,Blue Jays,34,28,181,6.51,0.525,89.3,1118
+2010,Brett Myers,Astros,33,33,223.2,7.24,0.436,89.3,962
+2014,Stephen Strasburg,Nationals,34,34,215,10.13,0.609,94.8,10131
+2016,Corey Kluber,Indians,32,32,215,9.5,0.515,92.5,2429
+2009,Dan Haren,Diamondbacks,33,33,229.1,8.75,0.457,90.6,1757
+2008,Chad Billingsley,Dodgers,35,32,200.2,9.01,0.589,91.5,5842
+2010,Matt Cain,Giants,33,33,223.1,7.13,0.632,91.6,4732
+2014,Max Scherzer,Tigers,33,33,220.1,10.29,0.551,92.8,3137
+2016,Rick Porcello,Red Sox,33,33,223,7.63,0.618,90.2,2717
+2013,James Shields,Royals,34,34,228.2,7.71,0.407,92.2,7059
+2018,Patrick Corbin,Diamondbacks,33,33,200,11.07,0.486,90.8,9323
+2012,Cliff Lee,Phillies,30,30,211,8.83,0.543,91.7,1636
+2013,Mat Latos,Reds,32,32,210.2,7.99,0.611,92.6,3815
+2007,Erik Bedard,Orioles,28,28,182,10.93,0.579,91.6,126
+2011,Dan Haren,Angels,35,34,238.1,7.25,0.345,90,1757
+2010,Cliff Lee,- - -,28,28,212.1,7.84,0.636,91.3,1636
+2011,Jordan Zimmermann,Nationals,26,26,161.1,6.92,0.613,93.4,4505
+2010,CC Sabathia,Yankees,34,34,237.2,7.46,0.615,93.5,404
+2015,A.J. Burnett,Pirates,26,26,164,7.85,0.640,90.9,512
+2007,Roy Oswalt,Astros,33,32,212,6.54,0.656,92.7,571
+2016,J.A. Happ,Blue Jays,32,32,195,7.52,0.735,91.6,7410
+2014,Yordano Ventura,Royals,31,30,183,7.82,0.654,97,11855
+2013,Julio Teheran,Braves,30,30,185.2,8.24,0.638,91.5,6797
+2016,Jose Quintana,White Sox,32,32,208,7.83,0.665,92.1,11423
+2017,Zack Greinke,Diamondbacks,32,32,202.1,9.56,0.482,91,1943
+2018,Jameson Taillon,Pirates,32,32,191,8.43,0.575,95.2,11674
+2018,Zack Greinke,Diamondbacks,33,33,207.2,8.62,0.487,89.6,1943
+2016,Julio Teheran,Braves,30,30,188,7.99,0.560,90.9,6797
+2011,Justin Masterson,Indians,34,33,216,6.58,0.844,92.7,2038
+2008,Jon Lester,Red Sox,33,33,210.1,6.5,0.566,92.1,4930
+2011,Madison Bumgarner,Giants,33,33,204.2,8.4,0.526,91.7,5524
+2013,Mike Minor,Braves,32,32,204.2,7.96,0.569,90.4,10021
+2014,James Shields,Royals,34,34,227,7.14,0.414,92.4,7059
+2007,CC Sabathia,Indians,34,34,241,7.8,0.606,92.9,404
+2008,Edinson Volquez,Reds,33,32,196,9.46,0.554,93.6,3990
+2010,Chris Carpenter,Cardinals,35,35,235,6.86,0.493,91.4,1292
+2019,Marcus Stroman,- - -,32,32,184.1,7.76,0.394,92.5,13431
+2011,Tim Hudson,Braves,33,33,215,6.61,0.567,90.5,921
+2009,Cliff Lee,- - -,34,34,231.2,7.03,0.614,91.1,1636
+2015,Chris Archer,Rays,34,34,212,10.7,0.541,95.2,6345
+2010,Gio Gonzalez,Athletics,33,33,200.2,7.67,0.621,91.8,7448
+2009,Josh Johnson,Marlins,33,33,209,8.22,0.680,95,4567
+2009,Randy Wolf,Dodgers,34,34,214.1,6.72,0.608,89,976
+2008,Derek Lowe,Dodgers,34,34,211,6.27,0.613,89.2,199
+2013,Ervin Santana,Royals,32,32,211,6.87,0.543,92.4,3200
+2010,Jon Lester,Red Sox,32,32,208,9.74,0.504,93.3,4930
+2013,Jordan Zimmermann,Nationals,32,32,213.1,6.79,0.636,93.9,4505
+2019,Patrick Corbin,Nationals,33,33,202,10.6,0.537,91.9,9323
+2019,Walker Buehler,Dodgers,30,30,182.1,10.61,0.603,96.6,19374
+2015,Tyson Ross,Padres,33,33,196,9.73,0.519,92.8,7872
+2014,David Price,- - -,34,34,248.1,9.82,0.570,93.2,3184
+2007,Josh Beckett,Red Sox,30,30,200.2,8.7,0.631,94.6,510
+2019,Shane Bieber,Indians,34,33,214.1,10.88,0.456,93.1,19427
+2011,R.A. Dickey,Mets,33,32,208.2,5.78,0.224,84.4,1245
+2017,Ervin Santana,Twins,33,33,211.1,7.11,0.525,92.9,3200
+2017,Carlos Carrasco,Indians,32,32,200,10.17,0.484,94.3,6632
+2012,Matt Harrison,Rangers,32,32,213.1,5.61,0.637,92.1,5551
+2008,Brandon Webb,Diamondbacks,34,34,226.2,7.27,0.710,88,1692
+2013,A.J. Burnett,Pirates,30,30,191,9.85,0.585,92.5,512
+2013,Ubaldo Jimenez,Indians,32,32,182.2,9.56,0.538,91.7,3374
+2018,Zack Wheeler,Mets,29,29,182.1,8.84,0.582,95.9,10310
+2013,Hiroki Kuroda,Yankees,32,32,201.1,6.71,0.494,91.5,3283
+2019,Stephen Strasburg,Nationals,33,33,209,10.81,0.483,93.9,10131
+2017,Drew Pomeranz,Red Sox,32,32,173.2,9.02,0.550,91.3,11426
+2011,Matt Garza,Cubs,31,31,198,8.95,0.534,93.7,3340
+2012,Hiroki Kuroda,Yankees,33,33,219.2,6.84,0.504,91.8,3283
+2016,Cole Hamels,Rangers,32,32,200.2,8.97,0.437,92.6,4972
+2018,Jon Lester,Cubs,32,32,181.2,7.38,0.503,91,4930
+2016,Drew Pomeranz,- - -,31,30,170.2,9.81,0.477,90.3,11426
+2011,Brandon McCarthy,Athletics,25,25,170.2,6.49,0.420,90.9,4662
+2008,John Danks,White Sox,33,33,195,7.34,0.526,91.3,6329
+2014,Jose Quintana,White Sox,32,32,200.1,8,0.570,91.6,11423
+2013,David Price,Rays,27,27,186.2,7.28,0.540,93.5,3184
+2007,Johan Santana,Twins,33,33,219,9.66,0.592,91.7,755
+2012,Wade Miley,Diamondbacks,32,29,194.2,6.66,0.722,90.9,8779
+2014,Chris Archer,Rays,32,32,194.2,8,0.659,94.6,6345
+2007,Tim Hudson,Braves,34,34,224.1,5.3,0.649,90.9,921
+2010,Tommy Hanson,Braves,34,34,202.2,7.68,0.570,92.7,9129
+2008,Dan Haren,Diamondbacks,33,33,216,8.58,0.503,91.2,1757
+2016,Chris Sale,White Sox,32,32,226.2,9.25,0.592,92.8,10603
+2015,Jon Lester,Cubs,32,32,205,9.09,0.530,92,4930
+2015,Wei-Yin Chen,Orioles,31,31,191.1,7.2,0.640,91.4,13071
+2014,Chris Tillman,Orioles,34,34,207.1,6.51,0.645,90.7,5279
+2016,John Lackey,Cubs,29,29,188.1,8.6,0.582,91.7,1507
+2015,Jake Odorizzi,Rays,28,28,169.1,7.97,0.509,91.3,6397
+2019,Dakota Hudson,Cardinals,33,32,174.2,7.01,0.617,93.7,19206
+2013,Kyle Lohse,Brewers,32,32,198.2,5.66,0.468,89.6,739
+2010,C.J. Wilson,Rangers,33,33,204,7.5,0.492,90.5,3580
+2013,Gio Gonzalez,Nationals,32,32,195.2,8.83,0.685,92.6,7448
+2015,Jose Quintana,White Sox,32,32,206.1,7.72,0.522,91.6,11423
+2017,Justin Verlander,- - -,33,33,206,9.57,0.582,95.2,8700
+2009,CC Sabathia,Yankees,34,34,230,7.71,0.616,94.2,404
+2012,Ryan Vogelsong,Giants,31,31,189.2,7.5,0.567,90.8,1011
+2013,Mike Leake,Reds,31,31,192.1,5.71,0.419,90.2,10130
+2008,Mike Mussina,Yankees,34,34,200.1,6.74,0.503,86.4,837
+2012,Madison Bumgarner,Giants,32,32,208.1,8.25,0.434,91.1,5524
+2012,Jake Peavy,White Sox,32,32,219,7.97,0.512,90.8,1051
+2010,Justin Verlander,Tigers,33,33,224.1,8.79,0.586,95.4,8700
+2012,CC Sabathia,Yankees,28,28,200,8.87,0.540,92.3,404
+2015,Michael Wacha,Cardinals,30,30,181.1,7.59,0.573,94.2,14078
+2016,Ervin Santana,Twins,30,30,181.1,7.4,0.528,92.7,3200
+2015,Francisco Liriano,Pirates,31,31,186.2,9.88,0.468,92.5,3201
+2018,Carlos Carrasco,Indians,32,30,192,10.83,0.448,93.5,6632
+2012,Ryan Dempster,- - -,28,28,173,7.96,0.449,89.7,517
+2014,Francisco Liriano,Pirates,29,29,162.1,9.7,0.429,92.6,3201
+2011,Jeff Karstens,Pirates,30,26,162.1,5.32,0.536,88.8,5879
+2011,Ervin Santana,Angels,33,33,228.2,7.01,0.584,92.8,3200
+2014,Mark Buehrle,Blue Jays,32,32,202,5.3,0.490,83.9,225
+2018,Luis Severino,Yankees,32,32,191.1,10.35,0.504,97.6,15890
+2007,Cole Hamels,Phillies,28,28,183.1,8.69,0.543,90.4,4972
+2013,C.J. Wilson,Angels,33,33,212.1,7.97,0.504,91.2,3580
+2010,Hiroki Kuroda,Dodgers,31,31,196.1,7.29,0.554,92.3,3283
+2011,Kyle Lohse,Cardinals,30,30,188.1,5.3,0.588,89.4,739
+2011,Matt Harrison,Rangers,31,30,185.2,6.11,0.643,92.8,5551
+2012,Ross Detwiler,Nationals,33,27,164.1,5.75,0.803,92.7,2859
+2019,Luis Castillo,Reds,32,32,190.2,10.67,0.506,96.5,15689
+2017,Andrew Cashner,Rangers,28,28,166.2,4.64,0.653,93.4,8782
+2007,Kelvim Escobar,Angels,30,30,195.2,7.36,0.517,93.7,1298
+2012,Jon Niese,Mets,30,30,190.1,7.33,0.490,90.4,4424
+2014,Jon Niese,Mets,30,30,187.2,6.62,0.496,88.5,4424
+2015,Chris Sale,White Sox,31,31,208.2,11.82,0.525,94.5,10603
+2009,Jon Lester,Red Sox,32,32,203.1,9.96,0.544,93.7,4930
+2008,Joe Saunders,Angels,31,31,198,4.68,0.633,91,4366
+2013,Patrick Corbin,Diamondbacks,32,32,208.1,7.69,0.673,92.1,9323
+2019,Lucas Giolito,White Sox,29,29,176.2,11.62,0.550,94.3,15474
+2015,Yovani Gallardo,Rangers,33,33,184.1,5.91,0.539,90.4,8173
+2013,Derek Holland,Rangers,33,33,213,7.99,0.625,93.6,4141
+2016,Bartolo Colon,Mets,34,33,191.2,6.01,0.895,87.9,375
+2017,Lance Lynn,Cardinals,33,33,186.1,7.39,0.811,91.8,2520
+2014,Rick Porcello,Tigers,32,31,204.2,5.67,0.587,90.4,2717
+2010,Tim Lincecum,Giants,33,33,212.1,9.79,0.546,91.3,5705
+2018,Kyle Hendricks,Cubs,33,33,199,7.28,0.618,86.9,12049
+2014,Alfredo Simon,Reds,32,32,196.1,5.82,0.585,94,2155
+2015,Johnny Cueto,- - -,32,32,212,7.47,0.509,92.5,6893
+2008,Scott Baker,Twins,28,28,172.1,7.36,0.612,90.7,6176
+2009,Justin Verlander,Tigers,35,35,240,10.09,0.679,95.6,8700
+2013,Justin Masterson,Indians,32,29,193,9.09,0.733,91.6,2038
+2011,Chris Carpenter,Cardinals,34,34,237.1,7.24,0.512,92.5,1292
+2008,Felix Hernandez,Mariners,31,31,200.2,7.85,0.659,94.6,4772
+2015,Danny Salazar,Indians,30,30,185,9.49,0.689,94.8,5867
+2019,Kyle Hendricks,Cubs,30,30,177,7.63,0.622,86.9,12049
+2013,Justin Verlander,Tigers,34,34,218.1,8.95,0.560,93.3,8700
+2014,Josh Collmenter,Diamondbacks,33,28,179.1,5.77,0.702,86,7312
+2010,Jon Garland,Padres,33,33,200,6.12,0.568,90.1,232
+2013,Jhoulys Chacin,Rockies,31,31,197.1,5.75,0.629,89.8,2608
+2011,Felix Hernandez,Mariners,33,33,233.2,8.55,0.536,93.3,4772
+2009,Ubaldo Jimenez,Rockies,33,33,218,8.17,0.627,96.1,3374
+2008,Zack Greinke,Royals,32,32,202.1,8.14,0.615,93.3,1943
+2014,Jason Hammel,- - -,30,29,176.1,8.06,0.591,92.3,4538
+2011,Mat Latos,Padres,31,31,194.1,8.57,0.558,92.8,3815
+2012,Jarrod Parker,Athletics,29,29,181.1,6.95,0.629,92.4,4913
+2011,Jon Lester,Red Sox,31,31,191.2,8.55,0.494,92.8,4930
+2012,Zack Greinke,- - -,34,34,212.1,8.48,0.527,92.4,1943
+2016,Marco Estrada,Blue Jays,29,29,176,8.44,0.498,88.1,1118
+2012,Mat Latos,Reds,33,33,209.1,7.95,0.585,92.6,3815
+2007,Scott Kazmir,Devil Rays,34,34,206.2,10.41,0.696,92.1,4897
+2016,Kenta Maeda,Dodgers,32,32,175.2,9.17,0.429,90,18498
+2011,Daniel Hudson,Diamondbacks,33,33,222,6.85,0.616,93.2,7146
+2015,Corey Kluber,Indians,32,32,222,9.93,0.519,92.8,2429
+2011,Wandy Rodriguez,Astros,30,30,191,7.82,0.530,89.1,2586
+2013,Homer Bailey,Reds,32,32,209,8.57,0.602,94.1,8362
+2013,Jorge De La Rosa,Rockies,30,30,167.2,6.01,0.509,91.1,2047
+2011,David Price,Rays,34,34,224.1,8.75,0.705,94.8,3184
+2017,Jimmy Nelson,Brewers,29,29,175.1,10.21,0.613,93.9,10547
+2009,Joel Pineiro,Cardinals,32,32,214,4.42,0.707,89,1094
+2008,Ervin Santana,Angels,32,32,219,8.79,0.614,94.4,3200
+2010,Max Scherzer,Tigers,31,31,195.2,8.46,0.650,93.1,3137
+2010,Dallas Braden,Athletics,30,30,192.2,5.28,0.574,86.7,8099
+2018,Jhoulys Chacin,Brewers,35,35,192.2,7.29,0.480,90.1,2608
+2016,Danny Duffy,Royals,42,26,179.2,9.42,0.593,94.8,3542
+2014,Yovani Gallardo,Brewers,32,32,192.1,6.83,0.557,91.4,8173
+2013,Jose Quintana,White Sox,33,33,200,7.38,0.559,91.4,11423
+2012,A.J. Burnett,Pirates,31,31,202.1,8.01,0.602,92.3,512
+2011,Alexi Ogando,Rangers,31,29,169,6.71,0.674,95.1,10261
+2011,Yovani Gallardo,Brewers,33,33,207.1,8.99,0.593,92.7,8173
+2013,Jeff Locke,Pirates,30,30,166.1,6.76,0.647,90.4,2929
+2013,John Lackey,Red Sox,29,29,189.1,7.65,0.575,91.7,1507
+2008,Ricky Nolasco,Marlins,34,32,212.1,7.88,0.516,91.2,3830
+2012,James Shields,Rays,33,33,227.2,8.82,0.337,92.3,7059
+2014,Hisashi Iwakuma,Mariners,28,28,179,7.74,0.479,88.9,13048
+2014,Phil Hughes,Twins,32,32,209.2,7.98,0.648,92.1,7450
+2019,Jeff Samardzija,Giants,32,32,181.1,6.95,0.456,91.9,3254
+2015,Felix Hernandez,Mariners,31,31,201.2,8.52,0.438,91.8,4772
+2017,Jake Arrieta,Cubs,30,30,168.1,8.71,0.639,92.1,4153
+2017,Jacob deGrom,Mets,31,31,201.1,10.68,0.554,95.2,10954
+2014,Wily Peralta,Brewers,32,32,198.2,6.98,0.657,95.8,7738
+2017,Aaron Nola,Phillies,27,27,168,9.86,0.536,92,16149
+2008,Roy Oswalt,Astros,32,32,208.2,7.12,0.660,92.6,571
+2012,Scott Diamond,Twins,27,27,173,4.68,0.597,89.4,5089
+2014,Wei-Yin Chen,Orioles,31,31,185.2,6.59,0.658,91.8,13071
+2014,Kyle Lohse,Brewers,31,31,198.1,6.4,0.457,89.4,739
+2011,Shaun Marcum,Brewers,33,33,200.2,7.09,0.343,86.9,6204
+2014,Zack Wheeler,Mets,32,32,185.1,9.08,0.621,95,10310
+2014,Scott Kazmir,Athletics,32,32,190.1,7.75,0.538,91,4897
+2017,Sonny Gray,- - -,27,27,162.1,8.48,0.551,93,12768
+2015,Edinson Volquez,Royals,34,33,200.1,6.96,0.509,93.7,3990
+2013,Wade Miley,Diamondbacks,33,33,202.2,6.53,0.688,91,8779
+2010,Anibal Sanchez,Marlins,32,32,195,7.25,0.522,91.3,3284
+2008,James Shields,Rays,33,33,215,6.7,0.449,90.4,7059
+2018,Mike Fiers,- - -,31,30,172,7.27,0.481,89.4,7754
+2007,Oliver Perez,Mets,29,29,177,8.85,0.655,90.5,1514
+2011,Jaime Garcia,Cardinals,32,32,194.2,7.21,0.531,89.8,8137
+2014,Tim Hudson,Giants,31,31,189.1,5.7,0.538,89,921
+2014,Aaron Harang,Braves,33,33,204.1,7.09,0.536,89.3,1451
+2010,Chad Billingsley,Dodgers,31,31,191.2,8.03,0.533,91.5,5842
+2018,Derek Holland,Giants,36,30,171.1,8.88,0.570,91.6,4141
+2008,Jesse Litsch,Blue Jays,29,28,176,5.06,0.239,89.9,3688
+2018,David Price,Red Sox,30,30,176,9.05,0.468,92.7,3184
+2019,Mike Minor,Rangers,32,32,208.1,8.64,0.446,92.6,10021
+2014,Jered Weaver,Angels,34,34,213.1,7.13,0.516,86.3,4235
+2015,Hector Santiago,Angels,33,32,180.2,8.07,0.606,90.3,4026
+2011,Mark Buehrle,White Sox,31,31,205.1,4.78,0.452,85.6,225
+2010,Wandy Rodriguez,Astros,32,32,195,8.22,0.524,89.6,2586
+2013,Cole Hamels,Phillies,33,33,220,8.26,0.497,91.6,4972
+2015,Dan Haren,- - -,32,32,187.1,6.34,0.377,86.1,1757
+2012,Aaron Harang,Dodgers,31,31,179.2,6.56,0.603,89.7,1451
+2016,Kevin Gausman,Orioles,30,30,179.2,8.72,0.663,94.7,14107
+2015,J.A. Happ,- - -,32,31,172,7.9,0.667,91.9,7410
+2018,Kyle Gibson,Twins,32,32,196.2,8.19,0.579,93,10123
+2010,Francisco Liriano,Twins,31,31,191.2,9.44,0.486,93.7,3201
+2009,Edwin Jackson,Tigers,33,33,214,6.77,0.653,94.5,1841
+2013,Dillon Gee,Mets,32,32,199,6.42,0.538,89.3,7396
+2011,Jhoulys Chacin,Rockies,31,31,194,6.96,0.601,91,2608
+2012,Tim Hudson,Braves,28,28,179,5.13,0.578,89,921
+2010,Ted Lilly,- - -,30,30,193.2,7.71,0.550,86.8,833
+2015,Carlos Carrasco,Indians,30,30,183.2,10.58,0.556,94.5,6632
+2007,Mark Buehrle,White Sox,30,30,201,5.15,0.446,85.9,225
+2014,Ian Kennedy,Padres,33,33,201,9.27,0.622,91.8,6986
+2008,Jeremy Guthrie,Orioles,30,30,190.2,5.66,0.641,93.2,2072
+2010,Johnny Cueto,Reds,31,31,185.2,6.69,0.552,93.2,6893
+2014,Matt Garza,Brewers,27,27,163.1,6.94,0.676,92.5,3340
+2011,Aaron Harang,Padres,28,28,170.2,6.54,0.594,89.8,1451
+2010,Shaun Marcum,Blue Jays,31,31,195.1,7.6,0.451,87.1,6204
+2017,Carlos Martinez,Cardinals,32,32,205,9.53,0.563,95.6,11682
+2007,Matt Cain,Giants,32,32,200,7.34,0.645,93.2,4732
+2009,Ryan Dempster,Cubs,31,31,200,7.74,0.529,90.6,517
+2015,Cole Hamels,- - -,32,32,212.1,9.11,0.492,92.6,4972
+2015,Garrett Richards,Angels,32,32,207.1,7.64,0.610,95.5,9784
+2014,Bud Norris,Orioles,28,28,165.1,7.57,0.605,93.4,9492
+2018,J.A. Happ,- - -,31,31,177.2,9.78,0.734,92,7410
+2016,Jerad Eickhoff,Phillies,33,33,197.1,7.62,0.528,91,12664
+2014,Chris Young,Mariners,30,29,165,5.89,0.664,85.3,3196
+2010,Livan Hernandez,Nationals,33,33,211.2,4.85,0.614,84.3,1116
+2011,Paul Maholm,Pirates,26,26,162.1,5.38,0.522,87.4,8678
+2007,Justin Verlander,Tigers,32,32,201.2,8.17,0.623,94.8,8700
+2015,Jordan Zimmermann,Nationals,33,33,201.2,7.32,0.625,93,4505
+2010,Mike Pelfrey,Mets,34,33,204,4.99,0.689,92,5203
+2012,Yovani Gallardo,Brewers,33,33,204,9,0.570,91.8,8173
+2017,Alex Cobb,Rays,29,29,179.1,6.42,0.515,91.7,6562
+2013,Doug Fister,Tigers,33,32,208.2,6.86,0.507,88.8,9425
+2007,Gil Meche,Royals,34,34,216,6.5,0.484,92.2,1089
+2012,Paul Maholm,- - -,32,31,189,6.67,0.414,87.4,8678
+2011,Anibal Sanchez,Marlins,32,32,196.1,9.26,0.537,91.7,3284
+2009,Kevin Millwood,Rangers,31,31,198.2,5.57,0.645,90.3,106
+2019,Lance Lynn,Rangers,33,33,208.1,10.63,0.714,94.2,2520
+2012,Homer Bailey,Reds,33,33,208,7.27,0.616,92.5,8362
+2008,Jair Jurrjens,Braves,31,31,188.1,6.64,0.620,91.9,5556
+2016,Ian Kennedy,Royals,33,33,195.2,8.46,0.662,92.2,6986
+2019,Jose Berrios,Twins,32,32,200.1,8.76,0.553,92.8,14168
+2011,Randy Wolf,Brewers,33,33,212.1,5.68,0.497,88.4,976
+2011,Javier Vazquez,Marlins,32,32,192.2,7.57,0.602,90.4,801
+2016,Jake Odorizzi,Rays,33,33,187.2,7.96,0.600,91.6,6397
+2015,Mike Fiers,- - -,31,30,180.1,8.98,0.572,89.4,7754
+2014,Jarred Cosart,- - -,30,30,180.1,5.74,0.701,93.6,10304
+2015,Brett Anderson,Dodgers,31,31,180.1,5.79,0.524,90.7,8223
+2011,Joe Saunders,Diamondbacks,33,33,212,4.58,0.640,89.6,4366
+2014,Mike Leake,Reds,33,33,214.1,6.89,0.505,90.7,10130
+2007,Jeremy Guthrie,Orioles,32,26,175.1,6.31,0.678,93.4,2072
+2007,Adam Wainwright,Cardinals,32,32,202,6.06,0.539,89.4,2233
+2011,Ivan Nova,Yankees,28,27,165.1,5.33,0.615,92.6,1994
+2007,Chien-Ming Wang,Yankees,30,30,199.1,4.7,0.764,92.7,2074
+2013,Ricky Nolasco,- - -,34,33,199.1,7.45,0.439,90.3,3830
+2015,Mike Leake,- - -,30,30,192,5.58,0.443,90.9,10130
+2008,Matt Garza,Rays,30,30,184.2,6.24,0.722,93.2,3340
+2011,John Lannan,Nationals,33,33,184.2,5.17,0.597,89.8,7080
+2014,Jason Vargas,Royals,30,30,187,6.16,0.574,87.3,8044
+2008,Paul Maholm,Pirates,31,31,206.1,6.06,0.624,89.6,8678
+2013,Chris Tillman,Orioles,33,33,206.1,7.81,0.622,91.6,5279
+2014,Hiroki Kuroda,Yankees,32,32,199,6.6,0.446,91.1,3283
+2008,Todd Wellemeyer,Cardinals,32,32,191.2,6.29,0.642,92.3,1709
+2008,Jamie Moyer,Phillies,33,33,196.1,5.64,0.409,81.2,1091
+2014,R.A. Dickey,Blue Jays,34,34,215.2,7.22,0.122,81.9,1245
+2016,Jeremy Hellickson,Phillies,32,32,189,7.33,0.494,90.1,4371
+2007,Roy Halladay,Blue Jays,31,31,225.1,5.55,0.470,91.1,1303
+2010,Colby Lewis,Rangers,32,32,201,8.78,0.570,90.1,1259
+2010,John Danks,White Sox,32,32,213,6.85,0.540,91.7,6329
+2012,Chris Capuano,Dodgers,33,33,198.1,7.35,0.572,88,1701
+2008,Mike Pelfrey,Mets,32,32,200.2,4.93,0.812,92.7,5203
+2008,Armando Galarraga,Tigers,30,28,178.2,6.35,0.492,90.2,4222
+2010,Ricky Romero,Blue Jays,32,32,210,7.46,0.493,90.8,3403
+2007,Aaron Harang,Reds,34,34,231.2,8.47,0.691,90.1,1451
+2014,Jake Peavy,- - -,32,32,202.2,7.02,0.525,90,1051
+2008,Hiroki Kuroda,Dodgers,31,31,183.1,5.69,0.593,92,3283
+2009,Yovani Gallardo,Brewers,30,30,185.2,9.89,0.605,92.3,8173
+2011,Tim Stauffer,Padres,31,31,185.2,6.2,0.510,90.4,6432
+2012,Mark Buehrle,Marlins,31,31,202.1,5.56,0.374,85,225
+2011,Michael Pineda,Mariners,28,28,171,9.11,0.622,94.7,5372
+2014,Shelby Miller,Cardinals,32,31,183,6.25,0.723,93.5,10197
+2018,Dallas Keuchel,Astros,34,34,204.2,6.73,0.531,89.3,9434
+2007,Javier Vazquez,White Sox,32,32,216.2,8.85,0.530,91.8,801
+2013,Andy Pettitte,Yankees,30,30,185.1,6.22,0.498,89,840
+2012,Max Scherzer,Tigers,32,32,187.2,11.08,0.608,94.2,3137
+2012,Tommy Milone,Athletics,31,31,190,6.49,0.476,87.7,7608
+2012,Bronson Arroyo,Reds,32,32,202,5.75,0.383,87.2,978
+2014,Scott Feldman,Astros,29,29,180.1,5.34,0.329,88.9,6283
+2015,Jason Hammel,Cubs,31,31,170.2,9.07,0.531,92.3,4538
+2010,Carl Pavano,Twins,32,32,221,4.76,0.575,90.1,790
+2008,John Lackey,Angels,24,24,163.1,7.16,0.603,90.7,1507
+2015,Erasmo Ramirez,Rays,34,27,163.1,6.94,0.557,90.9,10314
+2007,A.J. Burnett,Blue Jays,25,25,165.2,9.56,0.667,95.1,512
+2010,Clayton Richard,Padres,33,33,201.2,6.83,0.611,91.3,3551
+2009,Jered Weaver,Angels,33,33,211,7.42,0.592,88.9,4235
+2011,Philip Humber,White Sox,28,26,163,6.4,0.458,90.5,8586
+2013,Jon Lester,Red Sox,33,33,213.1,7.47,0.524,92.7,4930
+2008,Matt Cain,Giants,34,34,217.2,7.69,0.654,92.4,4732
+2016,Dan Straily,Reds,34,31,191.1,7.62,0.510,89.3,9460
+2012,Wandy Rodriguez,- - -,34,33,205.2,6.08,0.587,89.3,2586
+2012,Lucas Harrell,Astros,32,32,193.2,6.51,0.707,92.5,7541
+2007,Ian Snell,Pirates,32,32,208,7.66,0.528,92.4,2227
+2018,German Marquez,Rockies,33,33,196,10.56,0.551,95.2,15038
+2010,Roberto Hernandez,Indians,33,33,210.1,5.31,0.678,92.6,3273
+2016,Chris Tillman,Orioles,30,30,172,7.33,0.568,91.7,5279
+2009,Carlos Zambrano,Cubs,28,28,169.1,8.08,0.627,91.2,305
+2009,John Danks,White Sox,32,32,200.1,6.69,0.525,90.4,6329
+2011,Bud Norris,Astros,31,31,186,8.52,0.507,92.6,9492
+2018,Cole Hamels,- - -,32,32,190.2,8.87,0.453,92.1,4972
+2008,Kyle Lohse,Cardinals,33,33,200,5.36,0.601,90.8,739
+2012,Trevor Cahill,Diamondbacks,32,32,200,7.02,0.631,89.4,6249
+2013,Miguel Gonzalez,Orioles,30,28,171.1,6.3,0.623,91.4,7024
+2010,Jason Vargas,Mariners,31,31,192.2,5.42,0.599,86.8,8044
+2009,Jarrod Washburn,- - -,28,28,176,5.11,0.606,88.3,40
+2012,Lance Lynn,Cardinals,35,29,176,9.2,0.704,92.8,2520
+2011,Edwin Jackson,- - -,32,31,199.2,6.67,0.550,94.5,1841
+2008,Mark Buehrle,White Sox,34,34,218.2,5.76,0.481,86.5,225
+2013,Bronson Arroyo,Reds,32,32,202,5.52,0.441,87.2,978
+2015,Gio Gonzalez,Nationals,31,31,175.2,8.66,0.657,92,7448
+2010,Ian Kennedy,Diamondbacks,32,32,194,7.79,0.589,89.3,6986
+2015,Mark Buehrle,Blue Jays,32,32,198.2,4.12,0.506,83.4,225
+2012,Matt Moore,Rays,31,31,177.1,8.88,0.659,94.4,1890
+2016,Jeff Samardzija,Giants,32,32,203.1,7.39,0.474,94.3,3254
+2019,Eduardo Rodriguez,Red Sox,34,34,203.1,9.43,0.546,93.1,13164
+2012,Josh Johnson,Marlins,31,31,191.1,7.76,0.551,92.8,4567
+2014,Tom Koehler,Marlins,32,32,191.1,7.2,0.602,92.9,6570
+2012,Jeff Samardzija,Cubs,28,28,174.2,9.27,0.544,95,3254
+2019,Julio Teheran,Braves,33,33,174.2,8.35,0.638,89.7,6797
+2014,John Lackey,- - -,31,31,198,7.45,0.636,91.7,1507
+2017,Jose Urena,Marlins,34,28,169.2,5.99,0.563,95.5,11589
+2013,A.J. Griffin,Athletics,32,32,200,7.7,0.586,88.9,11132
+2012,C.J. Wilson,Angels,34,34,202.1,7.7,0.515,91.7,3580
+2017,Michael Fulmer,Tigers,25,25,164.2,6.23,0.593,95.8,13218
+2007,Ted Lilly,Cubs,34,34,207,7.57,0.564,88.4,833
+2010,Jeremy Guthrie,Orioles,32,32,209.1,5.12,0.615,92.5,2072
+2011,Zack Greinke,Brewers,28,28,171.2,10.54,0.560,92.5,1943
+2011,Charlie Morton,Pirates,29,29,171.2,5.77,0.697,91.4,4676
+2009,John Lackey,Angels,27,27,176.1,7.09,0.588,91.6,1507
+2016,Jason Hammel,Cubs,30,30,166.2,7.78,0.519,92.1,4538
+2018,Jose Berrios,Twins,32,32,192.1,9.45,0.605,93.2,14168
+2015,Kyle Gibson,Twins,32,32,194.2,6.7,0.579,91.8,10123
+2008,Gavin Floyd,White Sox,33,33,206.1,6.32,0.547,90.9,3886
+2009,Mark Buehrle,White Sox,33,33,213.1,4.43,0.442,85.7,225
+2009,Bronson Arroyo,Reds,33,33,220.1,5.19,0.449,88.5,978
+2010,Yovani Gallardo,Brewers,31,31,185,9.73,0.583,92.6,8173
+2015,Alex Wood,- - -,32,32,189.2,6.6,0.625,89.1,13781
+2010,Ryan Dempster,Cubs,34,34,215.1,8.69,0.545,91,517
+2014,Roenis Elias,Mariners,29,29,163.2,7.86,0.524,92,12673
+2019,Anibal Sanchez,Nationals,30,30,166,7.27,0.354,90.5,3284
+2007,James Shields,Devil Rays,31,31,215,7.7,0.467,90.1,7059
+2012,Jason Vargas,Mariners,33,33,217.1,5.84,0.571,88,8044
+2017,Yu Darvish,- - -,31,31,186.2,10.08,0.518,94.2,13074
+2009,Josh Beckett,Red Sox,32,32,212.1,8.43,0.602,94.3,510
+2012,Anibal Sanchez,- - -,31,31,195.2,7.68,0.476,91.8,3284
+2013,Scott Feldman,- - -,30,30,181.2,6.54,0.361,89.9,6283
+2011,Mike Leake,Reds,29,26,167.2,6.33,0.354,89.1,10130
+2019,Aaron Nola,Phillies,34,34,202.1,10.19,0.463,92.9,16149
+2007,Brian Bannister,Royals,27,27,165,4.2,0.585,89.1,5718
+2019,Sandy Alcantara,Marlins,32,32,197.1,6.89,0.570,95.6,18684
+2010,Bronson Arroyo,Reds,33,33,215.2,5.05,0.395,88,978
+2009,John Lannan,Nationals,33,33,206.1,3.88,0.672,88.2,7080
+2007,Tom Gorzelanny,Pirates,32,32,201.2,6.02,0.605,89.9,6244
+2007,Derek Lowe,Dodgers,33,32,199.1,6.64,0.669,89.2,199
+2019,Brett Anderson,Athletics,31,31,176,4.6,0.486,90.8,8223
+2019,Anthony DeSclafani,Reds,31,31,166.2,9.02,0.556,94.7,13050
+2015,Collin McHugh,Astros,32,32,203.2,7.56,0.336,90.4,7531
+2017,Jhoulys Chacin,Padres,32,32,180.1,7.64,0.541,91.4,2608
+2018,Sean Newcomb,Braves,31,30,164,8.78,0.623,93,16943
+2019,Mike Fiers,Athletics,33,33,184.2,6.14,0.523,90.4,7754
+2019,Madison Bumgarner,Giants,34,34,207.2,8.8,0.431,91.4,5524
+2012,Yu Darvish,Rangers,29,29,191.1,10.4,0.473,92.8,13074
+2017,Zach Davies,Brewers,33,33,191.1,5.83,0.578,89.7,13183
+2015,R.A. Dickey,Blue Jays,33,33,214.1,5.29,0.111,81.5,1245
+2010,Dan Haren,- - -,35,35,235,8.27,0.423,90.6,1757
+2008,John Lannan,Nationals,31,31,182,5.79,0.614,87.5,7080
+2016,CC Sabathia,Yankees,30,30,179.2,7.61,0.344,90,404
+2009,Kevin Correia,Padres,33,33,198,6.45,0.519,91,1767
+2007,John Maine,Mets,32,32,191,8.48,0.664,91.2,4773
+2008,Carlos Zambrano,Cubs,30,30,188.2,6.2,0.662,91.3,305
+2018,Reynaldo Lopez,White Sox,32,32,188.2,7.2,0.609,95.5,16400
+2008,Randy Johnson,Diamondbacks,30,30,184,8.46,0.514,90.8,60
+2010,Matt Garza,Rays,33,32,204.2,6.6,0.715,93.3,3340
+2015,James Shields,Padres,33,33,202.1,9.61,0.418,91,7059
+2017,Mike Leake,- - -,31,31,186,6.29,0.461,90.1,10130
+2018,Kevin Gausman,- - -,31,31,183.2,7.25,0.585,93.6,14107
+2010,Ervin Santana,Angels,33,33,222.2,6.83,0.581,92.5,3200
+2009,Ross Ohlendorf,Pirates,29,29,176.2,5.55,0.637,91.2,8268
+2007,Rich Hill,Cubs,32,32,195,8.45,0.606,89.4,4806
+2007,Felix Hernandez,Mariners,30,30,190.1,7.8,0.570,95.6,4772
+2013,Eric Stults,Padres,33,33,203.2,5.79,0.491,86.7,8011
+2009,Jeff Niemann,Rays,31,30,180.2,6.23,0.719,91.5,8591
+2012,Adam Wainwright,Cardinals,32,32,198.2,8.34,0.418,90.1,2233
+2018,Julio Teheran,Braves,31,31,175.2,8.3,0.620,89.8,6797
+2009,Matt Garza,Rays,32,32,203,8.38,0.711,92.9,3340
+2014,Ervin Santana,Braves,31,31,196,8.22,0.522,92.3,3200
+2015,Kyle Hendricks,Cubs,32,32,180,8.35,0.681,88.3,12049
+2015,Chris Heston,Giants,31,31,177.2,7.14,0.608,89,10302
+2007,Joe Blanton,Athletics,34,34,230,5.48,0.542,89.3,4849
+2007,Carlos Zambrano,Cubs,34,34,216.1,7.36,0.682,91.6,305
+2011,Derek Holland,Rangers,32,32,198,7.36,0.661,94.2,4141
+2009,Rick Porcello,Tigers,31,31,170.2,4.69,0.774,90.9,2717
+2008,Aaron Cook,Rockies,32,32,211.1,4.09,0.819,91,1571
+2018,Jake Arrieta,Phillies,31,31,172.2,7.19,0.557,93,4153
+2019,Zack Wheeler,Mets,31,31,195.1,8.98,0.590,96.7,10310
+2016,Zach Davies,Brewers,28,28,163.1,7.44,0.560,89.3,13183
+2012,Jake Westbrook,Cardinals,28,28,174.2,5.46,0.623,90.6,412
+2011,Ted Lilly,Dodgers,33,33,192.2,7.38,0.545,87.4,833
+2013,Lance Lynn,Cardinals,33,33,201.2,8.84,0.732,92.4,2520
+2013,Jarrod Parker,Athletics,32,32,197,6.12,0.638,91.5,4913
+2016,Brandon Finnegan,Reds,31,31,172,7.59,0.656,91.7,16208
+2008,Gil Meche,Royals,34,34,210.1,7.83,0.545,92.3,1089
+2019,Yu Darvish,Cubs,31,31,178.2,11.54,0.349,94.2,13074
+2019,Wade Miley,Astros,33,33,167.1,7.53,0.219,90.5,8779
+2018,Jose Urena,Marlins,31,31,174,6.72,0.587,95.8,11589
+2008,Ubaldo Jimenez,Rockies,34,34,198.2,7.79,0.698,94.9,3374
+2019,Marco Gonzales,Mariners,34,34,203,6.52,0.393,88.9,15467
+2016,David Price,Red Sox,35,35,230,8.92,0.488,92.9,3184
+2012,Clayton Richard,Padres,33,33,218.2,4.4,0.621,90.7,3551
+2018,Marco Gonzales,Mariners,29,29,166.2,7.83,0.327,90.1,15467
+2014,Ryan Vogelsong,Giants,32,32,184.2,7.36,0.466,90.5,1011
+2010,Derek Lowe,Braves,33,33,193.2,6.32,0.639,88.5,199
+2011,Bartolo Colon,Yankees,29,26,164.1,7.39,0.829,91.7,375
+2013,Matt Cain,Giants,30,30,184.1,7.71,0.488,91.2,4732
+2009,Jon Garland,- - -,33,33,204,4.81,0.620,89.7,232
+2014,Dan Haren,Dodgers,32,32,186,7.02,0.349,87.7,1757
+2012,Wei-Yin Chen,Orioles,32,32,192.2,7.19,0.651,91,13071
+2012,Ian Kennedy,Diamondbacks,33,33,208.1,8.08,0.659,89.7,6986
+2019,Max Fried,Braves,33,30,165.2,9.4,0.569,93.8,13743
+2016,Chris Archer,Rays,33,33,201.1,10.42,0.485,94.3,6345
+2009,Nick Blackburn,Twins,33,33,205.2,4.29,0.606,90.6,4270
+2008,Josh Beckett,Red Sox,27,27,174.1,8.88,0.669,94.3,510
+2018,Jose Quintana,Cubs,32,32,174.1,8.16,0.682,91.6,11423
+2009,Barry Zito,Giants,33,33,192,7.22,0.492,86.5,944
+2017,Patrick Corbin,Diamondbacks,33,32,189.2,8.45,0.534,92.4,9323
+2012,Edwin Jackson,Nationals,31,31,189.2,7.97,0.538,93.5,1841
+2009,Chad Billingsley,Dodgers,33,32,196.1,8.21,0.497,91.8,5842
+2016,Carlos Rodon,White Sox,28,28,165,9.16,0.637,93.4,16137
+2015,Julio Teheran,Braves,33,33,200.2,7.67,0.617,91.2,6797
+2013,Jeremy Guthrie,Royals,33,33,211.2,4.72,0.593,91.8,2072
+2009,Jason Marquis,Rockies,33,33,216,4.79,0.643,90.4,105
+2009,A.J. Burnett,Yankees,33,33,207,8.48,0.659,94.2,512
+2015,Anthony DeSclafani,Reds,31,31,184.2,7.36,0.620,92.5,13050
+2008,Nick Blackburn,Twins,33,33,193.1,4.47,0.501,91.2,4270
+2014,Brandon McCarthy,- - -,32,32,200,7.88,0.615,92.9,4662
+2007,Andy Pettitte,Yankees,36,34,215.1,5.89,0.533,89.1,840
+2009,Joe Blanton,Phillies,31,31,195.1,7.51,0.565,89.5,4849
+2009,Brett Anderson,Athletics,30,30,175.1,7.7,0.527,92.6,8223
+2009,Zach Duke,Pirates,32,32,213,4.48,0.566,88.8,3840
+2009,Gavin Floyd,White Sox,30,30,193,7.6,0.478,91.8,3886
+2008,A.J. Burnett,Blue Jays,35,34,221.1,9.39,0.647,94.3,512
+2012,Joe Saunders,- - -,28,28,174.2,5.77,0.708,88.9,4366
+2010,Wade Davis,Rays,29,29,168,6.05,0.716,92.3,7441
+2017,Chris Archer,Rays,34,34,201,11.15,0.476,95.5,6345
+2015,Yordano Ventura,Royals,28,28,163.1,8.6,0.576,96.4,11855
+2009,Scott Feldman,Rangers,34,31,189.2,5.36,0.411,91.6,6283
+2010,Gavin Floyd,White Sox,31,31,187.1,7.25,0.555,92.4,3886
+2015,Tom Koehler,Marlins,32,31,187.1,6.58,0.582,92.1,6570
+2016,Matt Moore,- - -,33,33,198.1,8.08,0.605,92.8,1890
+2007,Dustin McGowan,Blue Jays,27,27,169.2,7.64,0.592,94.7,8600
+2008,Ted Lilly,Cubs,34,34,204.2,8.09,0.493,87.4,833
+2014,Bartolo Colon,Mets,31,31,202.1,6.72,0.826,88.7,375
+2014,Roberto Hernandez,- - -,32,29,164.2,5.74,0.643,90.3,3273
+2014,Jorge De La Rosa,Rockies,32,32,184.1,6.79,0.410,92.3,2047
+2010,Doug Fister,Mariners,28,28,171,4.89,0.670,88.4,9425
+2015,Ubaldo Jimenez,Orioles,32,32,184,8.22,0.611,90.6,3374
+2015,Jimmy Nelson,Brewers,30,30,177.1,7.51,0.604,93.5,10547
+2016,Kendall Graveman,Athletics,31,31,186,5.23,0.619,92.7,15514
+2012,Mike Minor,Braves,30,30,179.1,7.28,0.590,90.3,10021
+2016,Hisashi Iwakuma,Mariners,33,33,199,6.65,0.457,87.8,13048
+2009,Doug Davis,Diamondbacks,34,34,203.1,6.46,0.254,85.1,1244
+2009,Roy Oswalt,Astros,30,30,181.1,6.85,0.608,93.1,571
+2007,Aaron Cook,Rockies,25,25,166,3.31,0.799,90.7,1571
+2009,Max Scherzer,Diamondbacks,30,30,170.1,9.19,0.710,93.6,3137
+2014,Jake Odorizzi,Rays,31,31,168,9.32,0.574,90.3,6397
+2015,Jon Niese,Mets,33,29,176.2,5.76,0.471,89.1,4424
+2008,Tim Wakefield,Red Sox,30,30,181,5.82,0.133,72.9,219
+2017,Michael Wacha,Cardinals,30,30,165.2,8.58,0.529,95.1,14078
+2014,Jeremy Guthrie,Royals,32,32,202.2,5.51,0.535,91.7,2072
+2019,Zach Eflin,Phillies,32,28,163.1,7.11,0.556,93.6,13774
+2007,Greg Maddux,Padres,34,34,198,4.73,0.725,84.7,104
+2009,James Shields,Rays,33,33,219.2,6.84,0.432,90.5,7059
+2012,Edinson Volquez,Padres,32,32,182.2,8.57,0.498,93.6,3990
+2017,Ivan Nova,Pirates,31,31,187,6.3,0.681,92.8,1994
+2018,Andrew Heaney,Angels,30,30,180,9,0.582,92,15423
+2012,Barry Zito,Giants,32,32,184.1,5.57,0.368,83.9,944
+2017,Jose Quintana,- - -,32,32,188.2,9.87,0.628,92.1,11423
+2010,Barry Zito,Giants,34,33,199.1,6.77,0.506,85.7,944
+2013,Mark Buehrle,Blue Jays,33,33,203.2,6.14,0.455,84.2,225
+2019,Miles Mikolas,Cardinals,32,32,184,7.04,0.515,93.6,9803
+2017,Jason Vargas,Royals,32,32,179.2,6.71,0.470,85.6,8044
+2011,Trevor Cahill,Athletics,34,34,207.2,6.37,0.587,89.1,6249
+2008,Braden Looper,Cardinals,33,33,199,4.88,0.638,90.2,526
+2009,Andy Pettitte,Yankees,32,32,194.2,6.84,0.571,89,840
+2015,Bartolo Colon,Mets,33,31,194.2,6.29,0.838,88.3,375
+2008,Greg Smith,Athletics,32,32,190.1,5.25,0.570,87.6,3455
+2010,Zack Greinke,Royals,33,33,220,7.4,0.607,93.5,1943
+2010,Randy Wolf,Brewers,34,34,215.2,5.93,0.564,88.4,976
+2013,Kevin Correia,Twins,31,31,185.1,4.9,0.385,90.5,1767
+2013,Bud Norris,- - -,32,30,176.2,7.49,0.551,92.5,9492
+2019,Joey Lucchesi,Padres,30,30,163.2,8.69,0.510,90.2,19320
+2008,Dave Bush,Brewers,31,29,185,5.3,0.511,88.7,4635
+2013,Yovani Gallardo,Brewers,31,31,180.2,7.17,0.531,90.7,8173
+2010,Phil Hughes,Yankees,31,29,176.1,7.45,0.636,92.6,7450
+2017,Trevor Bauer,Indians,32,31,176.1,10,0.492,94,12703
+2012,Phil Hughes,Yankees,32,32,191.1,7.76,0.654,92.1,7450
+2007,Carlos Silva,Twins,33,33,202,3.97,0.683,91.1,973
+2019,Brad Keller,Royals,28,28,165.1,6.64,0.668,93.4,15734
+2018,Ivan Nova,Pirates,29,29,161,6.37,0.669,92.9,1994
+2019,Adam Wainwright,Cardinals,31,31,171.2,8.02,0.385,89.9,2233
+2008,Scott Olsen,Marlins,33,33,201.2,5.04,0.633,87.8,4529
+2010,Jon Niese,Mets,30,30,173.2,7.67,0.559,89.7,4424
+2013,R.A. Dickey,Blue Jays,34,34,224.2,7.09,0.119,81.9,1245
+2011,James McDonald,Pirates,31,31,171,7.47,0.692,92.7,5523
+2012,James McDonald,Pirates,30,29,171,7.95,0.623,91.8,5523
+2012,Kevin Correia,Pirates,32,28,171,4.68,0.476,90.3,1767
+2018,Gio Gonzalez,- - -,32,32,171,7.79,0.564,89.8,7448
+2011,Chad Billingsley,Dodgers,32,32,188,7.28,0.550,91.5,5842
+2009,Aaron Harang,Reds,26,26,162.1,7.87,0.681,90.4,1451
+2010,Jake Westbrook,- - -,33,33,202.2,5.68,0.611,90.6,412
+2007,Jeff Francis,Rockies,34,34,215.1,6.9,0.601,86.6,4684
+2008,Greg Maddux,- - -,33,33,194,4.55,0.685,83.7,104
+2008,Oliver Perez,Mets,34,34,194,8.35,0.692,91.2,1514
+2010,Brett Cecil,Blue Jays,28,28,172.2,6.1,0.517,90.1,2660
+2012,Luis Mendoza,Royals,30,25,166,5.64,0.675,92.3,3126
+2007,Bronson Arroyo,Reds,34,34,210.2,6.66,0.438,88.4,978
+2007,Jon Garland,White Sox,32,32,208.1,4.23,0.653,89.3,232
+2009,Jonathan Sanchez,Giants,32,29,163.1,9.75,0.658,91.7,7507
+2017,Dylan Bundy,Orioles,28,28,169.2,8.06,0.537,92.2,12917
+2011,Josh Tomlin,Indians,26,26,165.1,4.84,0.423,87.9,9388
+2007,Doug Davis,Diamondbacks,33,33,192.2,6.73,0.401,84.1,1244
+2011,Jason Vargas,Mariners,32,32,201,5.87,0.474,87.4,8044
+2017,Gerrit Cole,Pirates,33,33,203,8.69,0.601,96,13125
+2017,Dan Straily,Marlins,33,33,181.2,8.42,0.505,90.3,9460
+2010,Randy Wells,Cubs,32,32,194.1,6.67,0.553,89.6,4535
+2017,R.A. Dickey,Braves,31,31,190,6.44,0.180,83.4,1245
+2016,Trevor Bauer,Indians,35,28,190,7.96,0.512,93.2,12703
+2015,Mike Pelfrey,Twins,30,30,164.2,4.7,0.732,93.3,5203
+2015,Ian Kennedy,Padres,30,30,168.1,9.3,0.623,91.3,6986
+2010,Mark Buehrle,White Sox,33,33,210.1,4.24,0.532,86,225
+2019,Noah Syndergaard,Mets,32,32,197.2,9.2,0.592,97.7,11762
+2018,Rick Porcello,Red Sox,33,33,191.1,8.94,0.500,90.4,2717
+2012,Gavin Floyd,White Sox,29,29,168,7.71,0.453,91.5,3886
+2007,Miguel Batista,Mariners,33,32,193,6.2,0.412,92.2,46
+2019,Mike Leake,- - -,32,32,197,5.8,0.343,88.4,10130
+2014,Eric Stults,Padres,32,32,176,5.68,0.504,87.9,8011
+2018,Luis Castillo,Reds,31,31,169.2,8.75,0.572,95.8,15689
+2011,Carl Pavano,Twins,33,33,222,4.14,0.608,89,790
+2009,Ricky Romero,Blue Jays,29,29,178,7.13,0.533,91.8,3403
+2008,Randy Wolf,- - -,33,33,190.1,7.66,0.596,88.8,976
+2010,Brian Matusz,Orioles,32,32,175.2,7.33,0.624,89.9,2646
+2007,Jarrod Washburn,Mariners,32,32,193.2,5.3,0.589,87.7,40
+2009,Cole Hamels,Phillies,32,32,193.2,7.81,0.591,90.2,4972
+2013,Rick Porcello,Tigers,32,29,177,7.22,0.617,91.2,2717
+2013,Felix Doubront,Red Sox,29,27,162.1,7.71,0.633,90.5,1478
+2011,Jeremy Guthrie,Orioles,34,32,208,5.62,0.626,92.5,2072
+2009,Jason Hammel,Rockies,34,30,176.2,6.78,0.599,92.1,4538
+2008,Jered Weaver,Angels,30,30,176.2,7.74,0.603,89.9,4235
+2012,Dan Haren,Angels,30,30,176.2,7.23,0.401,88.5,1757
+2016,Tom Koehler,Marlins,33,33,176.2,7.49,0.467,91.9,6570
+2011,John Danks,White Sox,27,27,170.1,7.13,0.489,91.6,6329
+2017,Jon Lester,Cubs,32,32,180.2,8.97,0.506,91.1,4930
+2014,Wade Miley,Diamondbacks,33,33,201.1,8.18,0.612,91.2,8779
+2019,Robbie Ray,Diamondbacks,33,33,174.1,12.13,0.526,92.4,11486
+2015,Andrew Cashner,Padres,31,31,184.2,8.04,0.673,94.8,8782
+2016,Collin McHugh,Astros,33,33,184.2,8.63,0.357,90.2,7531
+2013,Jeff Samardzija,Cubs,33,33,213.2,9.01,0.534,94.5,3254
+2008,Dana Eveland,Athletics,29,29,168,6.32,0.571,90.1,5508
+2018,Tanner Roark,Nationals,31,30,180.1,7.29,0.591,91.5,8753
+2010,John Lackey,Red Sox,33,33,215,6.53,0.587,91.5,1507
+2019,Tanner Roark,- - -,31,31,165.1,8.6,0.553,92.1,8753
+2018,Mike Leake,Mariners,31,31,185.2,5.77,0.384,88.7,10130
+2009,Scott Baker,Twins,33,33,200,7.29,0.621,91.2,6176
+2016,Marcus Stroman,Blue Jays,32,32,204,7.32,0.575,92.4,13431
+2011,Gavin Floyd,White Sox,31,30,193.2,7.02,0.473,91.2,3886
+2013,Wily Peralta,Brewers,32,32,183.1,6.33,0.667,94.8,7738
+2013,Tim Lincecum,Giants,32,32,197.2,8.79,0.500,90.2,5705
+2014,Nathan Eovaldi,Marlins,33,33,199.2,6.4,0.629,95.7,9132
+2018,Jakob Junis,Royals,30,30,177,8.34,0.533,91.1,13619
+2008,Andy Sonnanstine,Rays,32,32,193.1,5.77,0.327,87,7667
+2009,Jorge De La Rosa,Rockies,33,32,185,9.39,0.596,93.3,2047
+2018,Matthew Boyd,Tigers,31,31,170.1,8.4,0.488,90.4,15440
+2010,Jeff Niemann,Rays,30,29,174.1,6.76,0.640,91.4,8591
+2017,German Marquez,Rockies,29,29,162,8.17,0.655,95,15038
+2008,Manny Parra,Brewers,32,29,166,7.97,0.563,92.4,4279
+2016,Martin Perez,Rangers,33,33,198.2,4.67,0.617,92.7,6902
+2016,Josh Tomlin,Indians,30,29,174,6.1,0.380,87.7,9388
+2007,Daisuke Matsuzaka,Red Sox,32,32,204.2,8.84,0.527,91.9,7775
+2011,Colby Lewis,Rangers,32,32,200.1,7.59,0.579,89,1259
+2009,Johnny Cueto,Reds,30,30,171.1,6.93,0.622,92.7,6893
+2016,Ricky Nolasco,- - -,32,32,197.2,6.56,0.484,90.4,3830
+2008,Edwin Jackson,Rays,32,31,183.1,5.3,0.693,93.9,1841
+2019,Merrill Kelly,Diamondbacks,32,32,183.1,7.76,0.467,91.9,11156
+2017,Jeff Samardzija,Giants,32,32,207.2,8.88,0.468,94.3,3254
+2007,Chad Gaudin,Athletics,34,34,199.1,6.95,0.700,90.3,1783
+2011,Max Scherzer,Tigers,33,33,195,8.03,0.614,93.1,3137
+2019,Joe Musgrove,Pirates,32,31,170.1,8.3,0.495,92.4,12970
+2009,Paul Maholm,Pirates,31,31,194.2,5.5,0.543,89.4,8678
+2007,Tom Glavine,Mets,34,34,200.1,4,0.506,83.7,90
+2019,Masahiro Tanaka,Yankees,32,31,182,7.37,0.306,91.5,15764
+2011,Wade Davis,Rays,29,29,184,5.14,0.683,91.4,7441
+2016,Yordano Ventura,Royals,32,32,186,6.97,0.567,96.1,11855
+2016,R.A. Dickey,Blue Jays,30,29,169.2,6.68,0.120,82.3,1245
+2019,Jon Lester,Cubs,31,31,171.2,8.65,0.384,90.3,4930
+2011,Brett Myers,Astros,34,33,216,6.67,0.491,88.4,962
+2015,Wade Miley,Red Sox,32,32,193.2,6.83,0.568,90.8,8779
+2011,Livan Hernandez,Nationals,29,29,175.1,5.08,0.482,83.9,1116
+2014,Kyle Gibson,Twins,31,31,179.1,5.37,0.626,91.3,10123
+2010,Joe Saunders,- - -,33,33,203.1,5.05,0.638,90.5,4366
+2010,Edwin Jackson,- - -,32,32,209.1,7.78,0.593,94.4,1841
+2012,Ricky Nolasco,Marlins,31,31,191,5.89,0.448,90,3830
+2019,Trevor Bauer,- - -,34,34,213,10.69,0.423,94.6,12703
+2016,Mike Fiers,Astros,31,30,168.2,7.15,0.416,89.6,7754
+2012,Tommy Hanson,Braves,31,31,174.2,8.3,0.551,89.7,9129
+2014,Drew Hutchison,Blue Jays,32,32,184.2,8.97,0.651,92.2,10732
+2018,Jake Odorizzi,Twins,32,32,164.1,8.87,0.546,91.1,6397
+2015,Jeff Locke,Pirates,30,30,168.1,6.9,0.614,91.3,2929
+2010,Scott Baker,Twins,29,29,170.1,7.82,0.631,91.4,6176
+2017,Julio Teheran,Braves,32,32,188.1,7.22,0.645,91.4,6797
+2014,C.J. Wilson,Angels,31,31,175.2,7.74,0.525,90.8,3580
+2008,Jason Marquis,Cubs,29,28,167,4.9,0.627,90.1,105
+2018,James Shields,White Sox,34,33,204.2,6.77,0.364,89.4,7059
+2007,Barry Zito,Giants,34,33,196.2,5.99,0.568,84.5,944
+2010,Dave Bush,Brewers,32,31,174.1,5.52,0.520,86.5,4635
+2014,Justin Verlander,Tigers,32,32,206,6.95,0.558,92.3,8700
+2008,Andy Pettitte,Yankees,33,33,204,6.97,0.525,88.5,840
+2008,Brett Myers,Phillies,30,30,190,7.72,0.484,90.1,962
+2011,Chris Capuano,Mets,33,31,186,8.13,0.551,87.9,1701
+2015,Trevor Bauer,Indians,31,30,176,8.69,0.558,92.8,12703
+2018,Tyler Anderson,Rockies,32,32,176,8.39,0.446,91.8,12880
+2016,Dallas Keuchel,Astros,26,26,168,7.71,0.504,88.6,9434
+2015,Taijuan Walker,Mariners,29,29,169.2,8.33,0.648,94.3,11836
+2012,Clay Buchholz,Red Sox,29,29,189.1,6.13,0.438,92.2,3543
+2019,Matthew Boyd,Tigers,32,32,185.1,11.56,0.538,92,15440
+2016,Gio Gonzalez,Nationals,32,32,177.1,8.68,0.645,90.8,7448
+2013,Ryan Dempster,Red Sox,32,29,171.1,8.25,0.490,89.2,517
+2013,Jerome Williams,Angels,37,25,169.1,5.69,0.546,92.4,1137
+2019,Homer Bailey,- - -,31,31,163.1,8.21,0.506,93,8362
+2012,Mike Leake,Reds,30,30,179,5.83,0.463,89.6,10130
+2010,Chris Volstad,Marlins,30,30,175,5.25,0.597,90.9,9901
+2007,Wandy Rodriguez,Astros,31,31,182.2,7.78,0.672,88.9,2586
+2007,Paul Byrd,Indians,31,31,192.1,4.12,0.561,85.6,594
+2017,John Lackey,Cubs,31,30,170.2,7.86,0.524,90.9,1507
+2014,A.J. Burnett,Phillies,34,34,213.2,8,0.594,91.7,512
+2012,Rick Porcello,Tigers,31,31,176.1,5.46,0.672,92,2717
+2009,Joe Saunders,Angels,31,31,186,4.89,0.631,90.5,4366
+2008,Paul Byrd,- - -,30,30,180,4.1,0.503,85.7,594
+2007,Jason Marquis,Cubs,34,33,191.2,5.12,0.648,90.4,105
+2016,Jon Gray,Rockies,29,29,168,9.91,0.550,95.1,14916
+2014,Kyle Kendrick,Phillies,32,32,199,5.47,0.451,89.7,6230
+2007,Jeff Suppan,Brewers,34,34,206.2,4.96,0.595,87.9,633
+2016,Jimmy Nelson,Brewers,32,32,179.1,7.03,0.710,93.1,10547
+2016,Adam Wainwright,Cardinals,33,33,198.2,7.29,0.416,90.3,2233
+2007,Kyle Lohse,- - -,34,32,192.2,5.7,0.526,90.8,739
+2009,Trevor Cahill,Athletics,32,32,178.2,4.53,0.695,89.8,6249
+2007,Matt Chico,Nationals,31,31,167,5.07,0.602,85.5,6068
+2016,Doug Fister,Astros,32,32,180.1,5.74,0.658,87,9425
+2017,Rick Porcello,Red Sox,33,33,203.1,8.01,0.596,91.1,2717
+2012,Josh Beckett,- - -,28,28,170.1,6.97,0.480,91.4,510
+2012,Bud Norris,Astros,29,29,168.1,8.82,0.567,91.8,9492
+2015,Colby Lewis,Rangers,33,33,204.2,6.24,0.502,88,1259
+2011,Jake Westbrook,Cardinals,33,33,183.1,5.11,0.636,90,412
+2017,Tanner Roark,Nationals,32,30,181.1,8.24,0.568,92.2,8753
+2008,Javier Vazquez,White Sox,33,33,208.1,8.64,0.532,91.7,801
+2016,Jaime Garcia,Cardinals,32,30,171.2,7.86,0.629,90.5,8137
+2013,Dan Haren,Nationals,31,30,169.2,8.01,0.401,88.9,1757
+2009,Derek Lowe,Braves,34,34,194.2,5.13,0.676,88.6,199
+2012,Derek Holland,Rangers,29,27,175.1,7.44,0.685,93,4141
+2017,Luis Perdomo,Padres,29,29,163.2,6.49,0.627,94.2,14682
+2011,Ricky Nolasco,Marlins,33,33,206,6.47,0.516,90.5,3830
+2015,Rubby de la Rosa,Diamondbacks,32,32,188.2,7.16,0.588,94.3,3862
+2017,Kevin Gausman,Orioles,34,34,186.2,8.63,0.644,95,14107
+2011,Luke Hochevar,Royals,31,31,198,5.82,0.538,92.7,6943
+2011,Ubaldo Jimenez,- - -,32,32,188.1,8.6,0.617,93.5,3374
+2019,Jose Quintana,Cubs,32,31,171,8,0.618,91.4,11423
+2016,Mike Leake,Cardinals,30,30,176.2,6.37,0.484,90.6,10130
+2008,Joe Blanton,- - -,33,33,197.2,5.05,0.564,89.3,4849
+2016,Francisco Liriano,- - -,31,29,163,9.28,0.510,92.8,3201
+2013,Kyle Kendrick,Phillies,30,30,182,5.44,0.537,89.8,6230
+2016,Hector Santiago,- - -,33,33,182,7.12,0.632,91.4,4026
+2010,Justin Masterson,Indians,34,29,180,7,0.781,91.3,2038
+2015,John Danks,White Sox,30,30,177.2,6.28,0.442,89.4,6329
+2012,Joe Blanton,- - -,31,30,191,7.82,0.473,90.4,4849
+2019,Ivan Nova,White Sox,34,34,187,5.49,0.542,92.4,1994
+2011,Brandon Morrow,Blue Jays,30,30,179.1,10.19,0.616,93.9,9346
+2010,Kyle Kendrick,Phillies,33,31,180.2,4.18,0.587,89.8,6230
+2015,CC Sabathia,Yankees,29,29,167.1,7.37,0.563,90.1,404
+2008,Vicente Padilla,Rangers,29,29,171,6.68,0.735,91.8,964
+2011,Mike Pelfrey,Mets,34,33,193.2,4.88,0.644,92.2,5203
+2014,John Danks,White Sox,32,32,193.2,5.99,0.444,88.6,6329
+2017,Masahiro Tanaka,Yankees,30,30,178.1,9.79,0.277,92.2,15764
+2018,Zack Godley,Diamondbacks,33,32,178.1,9.34,0.322,89.9,14862
+2011,Rick Porcello,Tigers,31,31,182,5.14,0.654,90.2,2717
+2014,Hector Noesi,- - -,33,27,172.1,6.42,0.515,93,3292
+2011,Jason Hammel,Rockies,32,27,170.1,4.97,0.609,92.9,4538
+2012,Jeremy Guthrie,- - -,33,29,181.2,5,0.618,92.8,2072
+2019,German Marquez,Rockies,28,28,174,9.05,0.522,95.5,15038
+2007,Nate Robertson,Tigers,30,30,177.2,6.03,0.604,88.5,1620
+2007,Tim Wakefield,Red Sox,31,31,189,5.24,0.136,74.2,219
+2008,Bronson Arroyo,Reds,34,34,200,7.34,0.466,88.3,978
+2018,Nick Pivetta,Phillies,33,32,164,10.32,0.590,94.8,15454
+2013,CC Sabathia,Yankees,32,32,211,7.46,0.573,91.1,404
+2017,Ty Blach,Giants,34,24,163.2,4.01,0.600,90.1,14361
+2008,Aaron Harang,Reds,30,29,184.1,7.47,0.713,89.6,1451
+2017,Clayton Richard,Padres,32,32,197.1,6.89,0.687,90.7,3551
+2016,Chad Bettis,Rockies,32,32,186,6.68,0.558,91.7,10587
+2011,Ryan Dempster,Cubs,34,34,202.1,8.5,0.571,90.3,517
+2008,Johnny Cueto,Reds,31,31,174,8.17,0.611,93.4,6893
+2010,Jason Hammel,Rockies,30,30,177.2,7.14,0.609,93.1,4538
+2010,Joe Blanton,Phillies,29,28,175.2,6.87,0.546,89.4,4849
+2016,Michael Pineda,Yankees,32,32,175.2,10.61,0.513,94.1,5372
+2008,Zach Duke,Pirates,31,31,185,4.23,0.614,88.7,3840
+2017,Martin Perez,Rangers,32,32,185,5.59,0.587,93.1,6902
+2011,Jeff Francis,Royals,31,31,183,4.48,0.552,84.7,4684
+2012,Jon Lester,Red Sox,33,33,205.1,7.28,0.518,92.6,4930
+2008,Justin Verlander,Tigers,33,33,201,7.3,0.636,93.6,8700
+2012,Henderson Alvarez,Blue Jays,31,31,187.1,3.8,0.692,93.3,5669
+2015,Aaron Harang,Phillies,29,29,172.1,5.64,0.598,89.5,1451
+2016,Drew Smyly,Rays,30,30,175.1,8.57,0.565,90.2,11760
+2009,Brad Penny,- - -,30,30,173.1,5.66,0.711,94,535
+2011,Chris Volstad,Marlins,29,29,165.2,6.36,0.590,91.3,9901
+2007,Matt Morris,- - -,32,32,198.2,4.62,0.450,87.4,1172
+2008,Jon Garland,Angels,32,32,196.2,4.12,0.631,90.5,232
+2016,Robbie Ray,Diamondbacks,32,32,174.1,11.25,0.711,94.1,11486
+2013,Ian Kennedy,- - -,31,31,181.1,8.09,0.601,90.3,6986
+2015,Rick Porcello,Red Sox,28,28,172,7.8,0.660,91,2717
+2017,Ricky Nolasco,Angels,33,33,181,7.11,0.484,90.9,3830
+2010,Rick Porcello,Tigers,27,27,162.2,4.65,0.705,90.6,2717
+2012,Justin Masterson,Indians,34,34,206.1,6.94,0.807,91.9,2038
+2007,Livan Hernandez,Diamondbacks,33,33,204.1,3.96,0.593,83.6,1116
+2007,Braden Looper,Cardinals,31,30,175,4.47,0.664,89.1,526
+2007,Josh Fogg,Rockies,30,29,165.2,5.11,0.450,87.7,989
+2008,Tim Redding,Nationals,33,33,182,5.93,0.641,90.7,573
+2015,Jeff Samardzija,White Sox,32,32,214,6.86,0.397,94.2,3254
+2008,Jeff Suppan,Brewers,31,31,177.2,4.56,0.507,86.9,633
+2010,Brad Bergesen,Orioles,30,28,170,4.29,0.639,90,8375
+2013,Edwin Jackson,Cubs,31,31,175.1,6.93,0.599,93.1,1841
+2017,Marco Estrada,Blue Jays,33,33,186,8.52,0.537,89.9,1118
+2010,Chris Narveson,Brewers,37,28,167.2,7.35,0.459,88.3,2141
+2015,Chris Tillman,Orioles,31,31,173,6.24,0.650,91.5,5279
+2010,Rodrigo Lopez,Diamondbacks,33,33,200,5.22,0.499,88.2,150
+2007,Jeremy Bonderman,Tigers,28,28,174.1,7.49,0.583,92,1667
+2007,Jamie Moyer,Phillies,33,33,199.1,6.01,0.377,81.1,1091
+2007,Paul Maholm,Pirates,29,29,177.2,5.32,0.618,89.3,8678
+2012,Ivan Nova,Yankees,28,28,170.1,8.08,0.539,93,1994
+2014,Travis Wood,Cubs,31,31,173.2,7.57,0.528,88.3,9884
+2009,Mike Pelfrey,Mets,31,31,184.1,5.22,0.783,92.6,5203
+2009,Jeremy Guthrie,Orioles,33,33,200,4.95,0.622,92.4,2072
+2011,Derek Lowe,Braves,34,34,187,6.59,0.500,88,199
+2015,Alfredo Simon,Tigers,31,31,187,5.63,0.459,92.7,2155
+2016,Jered Weaver,Angels,31,31,178,5.21,0.435,83,4235
+2009,Ricky Nolasco,Marlins,31,31,185,9.49,0.515,91.5,3830
+2011,Bronson Arroyo,Reds,32,32,199,4.88,0.462,87,978
+2008,Kevin Millwood,Rangers,29,29,168.2,6.67,0.715,90.6,106
+2012,Bruce Chen,Royals,34,34,191.2,6.57,0.421,86.3,769
+2010,Kevin Millwood,Orioles,31,31,190.2,6.23,0.617,89,106
+2007,Boof Bonser,Twins,31,30,173,7.08,0.551,91.9,2159
+2010,Paul Maholm,Pirates,32,32,185.1,4.95,0.556,88.3,8678
+2009,Carl Pavano,- - -,33,33,199.1,6.64,0.573,90.7,790
+2019,Martin Perez,Twins,32,29,165.1,7.35,0.423,94.1,6902
+2018,Jon Gray,Rockies,31,31,172.1,9.56,0.497,94.8,14916
+2007,Dave Bush,Brewers,33,31,186.1,6.47,0.540,88.7,4635
+2008,Barry Zito,Giants,32,32,180,6,0.538,84.9,944
+2011,A.J. Burnett,Yankees,33,32,190.1,8.18,0.560,92.7,512
+2012,Ervin Santana,Angels,30,30,178,6.72,0.574,91.7,3200
+2007,Kevin Millwood,Rangers,31,31,172.2,6.41,0.632,91.3,106
+2007,Dontrelle Willis,Marlins,35,35,205.1,6.4,0.777,89.3,1703
+2013,Jeremy Hellickson,Rays,32,31,174,6.98,0.539,90.5,4371
+2012,Tim Lincecum,Giants,33,33,186,9.19,0.521,90.4,5705
+2014,Colby Lewis,Rangers,29,29,170.1,7.03,0.619,88.7,1259
+2010,James Shields,Rays,34,33,203.1,8.28,0.461,91.5,7059
+2009,Braden Looper,Brewers,34,34,194.2,4.62,0.495,89.4,526
+2019,Jakob Junis,Royals,31,31,175.1,8.42,0.509,91.5,13619
+2011,Roberto Hernandez,Indians,32,32,188.2,5.2,0.684,92.5,3273
+2008,Daniel Cabrera,Orioles,30,30,180,4.75,0.826,92.6,1931
+2010,A.J. Burnett,Yankees,33,33,186.2,6.99,0.690,93.2,512
+2013,Joe Saunders,Mariners,32,32,183,5.26,0.560,89.6,4366
+2007,Woody Williams,Astros,33,31,188,4.84,0.593,86.5,1190
+2017,Jason Hammel,Royals,32,32,180.1,7.24,0.501,92.1,4538
+2011,Brad Penny,Tigers,31,31,181.2,3.67,0.616,92.6,535
+2007,Matt Belisle,Reds,30,30,177.2,6.33,0.629,91.1,1837
+2014,Clay Buchholz,Red Sox,28,28,170.1,6.97,0.449,91.6,3543
+2010,Kyle Davies,Royals,32,32,183.2,6.17,0.471,92.6,3642
+2016,Wade Miley,- - -,30,30,166,7.43,0.512,90.3,8779
+2016,Edinson Volquez,Royals,34,34,189.1,6.61,0.529,93.2,3990
+2019,Reynaldo Lopez,White Sox,33,33,184,8.27,0.586,95.5,16400
+2012,Ubaldo Jimenez,Indians,31,31,176.2,7.28,0.575,92.5,3374
+2008,Ian Snell,Pirates,31,31,164.1,7.39,0.622,92.2,2227
+2017,Jeremy Hellickson,- - -,30,30,164,5.27,0.461,90.2,4371
+2009,Livan Hernandez,- - -,31,31,183.2,5,0.656,84.7,1116
+2018,Dylan Bundy,Orioles,31,31,171.2,9.65,0.558,91.6,12917
+2010,Jeremy Bonderman,Tigers,30,29,171,5.89,0.652,89.8,1667
+2017,Matt Moore,Giants,32,31,174.1,7.64,0.517,92,1890
+2019,Rick Porcello,Red Sox,32,32,174.1,7.38,0.565,90.5,2717
+2007,Daniel Cabrera,Orioles,34,34,204.1,7.31,0.741,94.3,1931
+2007,Jose Contreras,White Sox,32,30,189,5.38,0.562,90.1,1660
+2007,Kip Wells,Cardinals,34,26,162.2,6.75,0.599,90.7,1012
+2008,Kenny Rogers,Tigers,30,30,173.2,4.25,0.558,85.2,1277
+2013,Edinson Volquez,- - -,33,32,170.1,7.5,0.546,92.5,3990
+2012,Luke Hochevar,Royals,32,32,185.1,6.99,0.535,92.6,6943
+2008,Brian Bannister,Royals,32,32,182.2,5.57,0.596,89,5718
+2012,Ricky Romero,Blue Jays,32,32,181,6.17,0.454,91.2,3403
+2007,Scott Olsen,Marlins,33,33,176.2,6.78,0.702,90.1,4529
+2016,James Shields,- - -,33,33,181.2,6.69,0.440,90.4,7059
+2008,Brandon Backe,Astros,31,31,166.2,6.86,0.483,89.5,1529
+2008,Livan Hernandez,- - -,31,31,180,3.35,0.724,83.7,1116
+2018,Lucas Giolito,White Sox,32,32,173.1,6.49,0.594,92.4,15474
+2008,Nate Robertson,Tigers,32,28,168.2,5.76,0.592,88.4,1620
