@@ -405,7 +405,7 @@ There seems to be some legs here. Another trend I would expect to see is that ba
 
 I am pretty sure the MLB started keeping stats like exit velocity around 2000, so I am going to do a little hunting on the internet.  
 
-I found some data from 2008-2019 which includes a Hard Hit %, which I think will act similarly to exit velocity in analysis.
+I found some data from [Fangraphs](https://www.fangraphs.com/leaders.aspx?pos=all&stats=bat&lg=all&qual=y&type=c,11,12,5,9,10,16,211&season=2019&month=0&season1=2008&ind=1&team=0&rost=0&age=0&filter=&players=0&startdate=2008-01-01&enddate=2019-12-31) from 2008-2019 which includes a Hard Hit %, which I think will act similarly to exit velocity in analysis.
 
 ```{r}
 fangraphs_batting <- read_csv("fangraphs_batting.csv")
@@ -420,21 +420,63 @@ fangraphs_batting %>%
 There are a similar number of observations for every season. Let's see if strikeouts/hard hit % have been increasing for this sample of players.
 
 ```{r}
-fangraphs_batting %>%
+advanced_batting <- fangraphs_batting %>%
   group_by(Season) %>%
   summarise(count = n(),
             so_per_ab = sum(SO) / sum(AB),
             avg_hard_percentage = mean(Hard_Percent))
 
-fangraphs_batting %>%
-  group_by(Season) %>%
-  summarise(count = n(),
-            so_per_ab = sum(SO) / sum(AB),
-            avg_hard_percentage = mean(Hard_Percent)) %>%
+advanced_batting %>%
   ggplot(aes(x = Season)) +
   geom_line(aes(y = so_per_ab, color = "strikeouts per at bat")) +
   geom_line(aes(y = avg_hard_percentage, color = "average hard hit ball per ball in play")) +
   ylab("percentage")
 ```
 <br>
-The strikeout pattern is not the same as the one for all players, but it is quite similar. Also, the hard hit percentage has risen dramatically, especially in the last few years, as the strikeout percentage has similarly been rising dramatically. 
+The strikeout pattern is not the same as the one for all players, but it is quite similar. Also, the hard hit percentage has risen dramatically, especially in the last few years, as the strikeout percentage has similarly been rising dramatically.  
+
+```{r}
+advanced_batting %>%
+  ggplot(aes(x = avg_hard_percentage, y = so_per_ab)) +
+  geom_point() +
+  stat_smooth(geom='line', method = "lm", alpha=0.3, se=FALSE, color = "blue")
+
+y <- advanced_batting$so_per_ab
+x <- advanced_batting$avg_hard_percentage
+
+#Prints the R-squared of the regression of strikeouts on hard hit balls
+summary(lm(y ~ x))$r.squared
+```
+<br>
+Can we see this pattern with individuals?  
+This is going to take a bit of data manipulation.
+
+```{r}
+six_years_list <- fangraphs_batting %>%
+  group_by(Name) %>%
+  summarise(count = n()) %>%
+  filter(count %in% c(8, 9))
+
+six_years_list
+```
+
+I am going to use this group of players, some who are reaching the tail end of their career, and some who are reaching the peak years of their career. I would expect the correlation between changes in hard hit % and changes in strikeouts ber at bat to be fairly strong for most of these players, but stronger for those reaching the tail end of their career, as the younger players are still gaining strength, and are potentially able to hit more hard balls without changing their swing/approach.
+
+```{r}
+six_years_list$Name
+
+fangraphs_batting %>%
+  filter(Name %in% six_years_list$Name) %>%
+  mutate(so_per_ab = SO/AB) %>%
+  select(Name, Season, so_per_ab, Hard_Percent)
+
+fangraphs_batting %>%
+  filter(Name %in% six_years_list$Name) %>%
+  mutate(so_per_ab = SO/AB) %>%
+  select(Name, Season, so_per_ab, Hard_Percent) %>%
+  ggplot(aes(x = Season)) +
+  geom_line(aes(y = so_per_ab, color = "strikeouts per at bat")) +
+  geom_line(aes(y = Hard_Percent, color = "Hard Hit Ball %")) +
+  facet_wrap(~ Name)
+```
+
