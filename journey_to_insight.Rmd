@@ -568,7 +568,7 @@ query <-  "
           WHERE IPouts > 100
           GROUP BY pi.playerID
           ORDER BY strikeout_percentage DESC
-          LIMIT 30
+          LIMIT 20
           "
 
 kable_query(con, query)
@@ -587,8 +587,69 @@ Some clear observations here:
 I have downloaded some pitching data [from Fangraphs](https://www.fangraphs.com/leaders.aspx?pos=all&stats=pit&lg=all&qual=y&type=c,7,8,13,-1,36,75,76&season=2019&month=0&season1=2007&ind=1&team=&rost=&age=&filter=&players=&startdate=&enddate=). Now I can look at the correlation between fastball speed and strikeouts more precisely.
 
 ```{r}
-fangraphs_pitching <- read_csv("fangraphs_pitching")
+fangraphs_pitching <- read_csv("fangraphs_pitching.csv")
 
 head(fangraphs_pitching)
 ```
+
+All I have to do is see if FBv (average fastball velocity) is correlated to so_per_nine (strikeouts per 9 innings/27 outs). I am also going to remove knuckle ball pitchers from the list (fastballs slower than 80mph)
+
+```{r}
+fangraphs_pitching %>%
+  filter(FBv > 80) %>%
+  ggplot(aes(x = FBv, y = so_per_nine)) +
+  geom_point() +
+  stat_smooth(geom='line', method = "lm", alpha=0.3, se=FALSE, color = "blue")
+
+# Hexbin library allows me to use geom_hex
+library(hexbin)
+fangraphs_pitching %>%
+  filter(FBv > 80) %>%
+  ggplot(aes(x = FBv, y = so_per_nine)) +
+  geom_hex()
+
+y <- fangraphs_pitching$so_per_nine
+x <- fangraphs_pitching$FBv
+
+#Prints the R-squared of the regression of strikeouts on fastball velocity
+summary(lm(y ~ x))$r.squared
+```
+
+There is certainly some relationship there. Now lets see if we can show that fastball velocity has been increasing year over year.
+
+```{r}
+fangraphs_pitching %>%
+  group_by(Season) %>%
+  summarise(average_fastball_velocity = mean(FBv)) %>%
+  ggplot(aes(x = Season, y = average_fastball_velocity)) +
+  geom_line() +
+  ylim(89, 93)
+```
+
+```{r}
+fangraphs_pitching %>%
+  filter(Season > 2007) %>%
+  filter(FBv > 80) %>%
+  ggplot(aes(x = FBv)) +
+  geom_histogram(aes(color = Season), fill = "white", binwidth = 1, show.legend = FALSE) +
+  geom_vline(data = fangraphs_pitching %>%
+                    filter(Season > 2007) %>%
+                    filter(FBv > 80) %>%
+                    group_by(Season) %>%
+                    summarise(avg = mean(FBv)),
+             aes(xintercept = avg), color = "red") +
+  facet_wrap(~ Season)
+```
+<br>
+Think this could be better shown as a box/violin plot.  
+
+```{r}
+fangraphs_pitching %>%
+  filter(Season > 2007) %>%
+  filter(FBv > 80) %>%
+  ggplot(aes(x = factor(Season))) +
+  geom_boxplot(aes(y = FBv))
+```
+
+Better. So we see that pitchers who throw harder, all else equal, get more strikeouts. And we also know that pitchers have thrown harder fastablls on average ofer the past 12 years. This seems to be a good explanation as to potentially why more batters are striking out. 
 
