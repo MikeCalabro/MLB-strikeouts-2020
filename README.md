@@ -8,9 +8,9 @@ The work in here showcases my attempt to investigate the drastic increase in Str
 
 # Important Files
 
-journey_to_insight.html - displays my process of looking through the data looking for trends.  
+journey_to_insight.Rmd - displays my process of looking through the data looking for trends.  
 
-(tba) useful_charts.pdf - will cleanly display the most notable charts I created in journey_to_insight
+(tba) useful_charts.Rmd - will cleanly display the most notable charts I created in journey_to_insight
 
 # What Data?
 

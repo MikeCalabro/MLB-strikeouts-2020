@@ -1,0 +1,162 @@
+---
+title: "Visualizing the Increase in MLB Strikeouts Since 2007"
+author: "Michael Calabro"
+date: "8/3/2020"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+library(DBI)
+library(tidyverse)
+library(hexbin)
+
+con <- dbConnect(RSQLite::SQLite(), dbname = "lahmans_baseball_db.sqlite")
+
+# Makes it so all of my code chunks will appear in the pdf,
+# and all of my code chunks written in sql will use the "con" connection
+knitr::opts_chunk$set(connection = "con")
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+The goal of this document is to present, in a clean fashion, the most notable tables, graphs, and plots created in my "journey to insight". Graphs and tables which need explanations will be accompanied with explanations. And for now, I think we can dive right in!  
+
+```{sql, tab.cap = "Total Strikeouts in the MLB Per Season", max.print = NA}
+SELECT 
+  yearID AS Year,
+  SUM(SO) AS Strikeouts
+FROM batting
+WHERE yearID > 2006
+GROUP BY yearID
+
+-- Assigned to variable "total_so"
+```
+
+This table provides a clean representation of what I wish to investigate throughout this document.
+
+```{sql, echo=FALSE, output.var="total_so"}
+SELECT 
+  yearID AS Year,
+  SUM(SO) AS Strikeouts
+FROM batting
+WHERE yearID > 1994
+GROUP BY yearID
+```
+
+\newpage
+
+```{r}
+total_so %>%
+  ggplot(aes(x = Year, y = Strikeouts)) +
+  geom_line() +
+  xlim(1995, 2020) +
+  ggtitle("Total Strikeouts in Each MLB Season Since 1995", 
+          subtitle = "A new record has been set every year since 2007")
+```
+
+Of course, it is possible that this trend is due to an increase in at bats in this time frame. What I really want to know is if a higher *percentage* of at bats are resulting in strikeouts year over year.
+
+\newpage
+
+```{sql, tab.cap = "Strikeouts Percentage in the MLB By Season", max.print = NA}
+SELECT 
+  yearID AS Year,
+  ROUND(CAST(SUM(SO) AS FLOAT) / SUM(AB), 3) AS "Strikeouts Per AB"
+FROM batting
+WHERE yearID > 2006
+GROUP BY yearID
+
+-- Assigned to variable strikeout_percent
+```
+
+```{sql, echo=FALSE, output.var="strikeout_percent"}
+SELECT 
+  yearID AS Year,
+  ROUND(CAST(SUM(SO) AS FLOAT) / SUM(AB), 3) AS strikeouts_per_ab
+FROM batting
+WHERE yearID > 1994
+GROUP BY yearID
+```
+
+\newpage
+
+```{r}
+strikeout_percent %>%
+  ggplot(aes(x = Year, y = strikeouts_per_ab)) +
+  geom_line() +
+  xlim(1995, 2020) +
+  ylab("Share of At Bats Resulting in Strikeouts") +
+  ggtitle("Strikeouts Per At Bat Each MLB Season Since 1995", 
+          subtitle = "A new record has been set every year since 2007")  
+```
+
+I find it very notable that this trend began around 2005 - shortly after the release of "Moneyball", a book which emphasized a more data-driven approach to winning baseball games. Since the release of "Moneyball", by Michael Lewis, strategy in the all aspects of the MLB has slowly begun to evolve. For this reason, it is my belief that this increase in strikeouts is likely due to an evolution in both hitting and pitching strategy for MLB teams. To make it more specific, I have two theories:  
+
+1. Batters/ team batting strategies have changed to incentivize an increase in some metric(s) (i.e walks, homeruns, extra base hits, exit velocity) at the expense of more strikeouts, for the sake of more runs.  
+
+*Simply: Batters changing strategy = more strikeouts*
+
+2. Pitchers/ team pitching strategies have outpaced hitting strategies in their ability to learn from the new advanced metrics.  
+
+*Simply: Pitchers changing strategy = more strikeouts*  
+
+So to what extent is each theory accurate? To find out, I need to come up with some investigatable hypotheses, and then fudge around with the data available to judge their respective merit.
+
+\newpage
+
+**BATTING HYPOTHESIS #1: Some Hitting Statistic is Increasing Alongside Strikeouts**
+
+```{sql, tab.cap = "Hitting Percentages in the MLB By Season", max.print = NA}
+SELECT 
+  yearID AS Year,
+  ROUND(CAST(SUM(SO) AS FLOAT) / SUM(AB), 3) AS "SO%",
+  ROUND(CAST(SUM(H) AS FLOAT) / SUM(AB), 3) AS "Hit%",
+  ROUND(CAST(SUM(HR) AS FLOAT) / SUM(AB), 3) AS "HR%",
+  ROUND(CAST(SUM('2B') AS FLOAT) / SUM(AB), 3) AS "2B%",
+  ROUND(CAST(SUM('3B') AS FLOAT) / SUM(AB), 3) AS "3B%",
+  ROUND(CAST(SUM('3B') + SUM('2B') + SUM(HR) AS FLOAT) / SUM(AB), 3) AS "XBH%",
+  ROUND(CAST(SUM(BB) AS FLOAT) / SUM(AB), 3) AS "Walk%"
+FROM batting
+WHERE yearID > 2006
+GROUP BY yearID
+```
+
+While an emphasis is often placed on Homeruns, it seems to me like the most notable trend is an increase in the percentage of all extra base hits (2B, 3B, and HR are all XBHs).  
+
+Furthermore, I want to see extra base hits as a share of all hits. The logic goes that players are willing to strike out more, if it means that more of their hits are extra base hits.
+
+\newpage
+
+```{sql, tab.cap = "Select Hitting Percentages in the MLB By Season", max.print = NA}
+SELECT
+  yearID AS Year,
+  ROUND(CAST(SUM(SO) AS FLOAT) / SUM(AB), 3) AS "SO per AB",
+  ROUND((SUM('3B') + SUM('2B') + SUM(HR)) / CAST(SUM(H) AS FLOAT), 3) AS "XBH per Hit"
+FROM batting
+WHERE yearID > 2006
+GROUP BY yearID
+
+-- Assigned to variable so_xbh
+```
+
+```{sql, echo=FALSE, output.var="so_xbh"}
+SELECT
+  yearID AS Year,
+  ROUND(CAST(SUM(SO) AS FLOAT) / SUM(AB), 3) AS so_per_ab,
+  ROUND((SUM('3B') + SUM('2B') + SUM(HR)) / CAST(SUM(H) AS FLOAT), 3) AS xbh_per_hit
+FROM batting
+WHERE yearID > 2006
+GROUP BY yearID
+```
+
+\newpage
+
+```{r}
+so_xbh %>%
+  ggplot(aes(x = Year)) +
+  geom_line(aes(y = so_per_ab, color = "Strikeouts Per At Bat")) +
+  geom_line(aes(y = xbh_per_hit, color = "Extra Base Hits as a Share of Hits")) +
+  xlab("percentage") +
+  ggtitle("Extra Base Hits and Strikeouts in the MLB Since 2007")
+```
+
+I plan to do more statistical analysis in another document, but I think I see a pretty clear pattern here.
