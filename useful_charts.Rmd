@@ -159,4 +159,79 @@ so_xbh %>%
   ggtitle("Extra Base Hits and Strikeouts in the MLB Since 2007")
 ```
 
-I plan to do more statistical analysis in another document, but I think I see a pretty clear pattern here.
+I plan to do more statistical analysis in another document, but I think I see a pretty clear pattern here.  
+
+The next question is: why would someone want to sacrifice strikeouts for extra base hits?  
+
+Answer: The offensive objective in baseball is to score as many runs as possible. Therefore, I would guess that team extra base hits play a bigger role in runs scored than strikeouts do. If that were the case, then teams would be incentivized to risk strikeouts for the sake of extra base hits, becasue then they would be likely to score more runs.
+
+\newpage
+
+**BATTING HYPOTHESIS #2: XBH Has a Greater Effect on Runs Scored Than Strikeouts**
+
+```{sql, output.var="team_xbh_so_runs"}
+SELECT 
+  yearID,
+  teamID,
+  SUM(SO) AS team_strikeouts,
+  SUM(R) AS team_runs,
+  SUM(b.'2B') + SUM(b.'3B') + SUM(HR) AS team_xbh
+FROM batting AS b
+WHERE yearID > 1997
+GROUP BY yearID, teamID
+
+-- Assigned to variable "team_xbh_so_runs"
+```
+
+```{r}
+team_xbh_so_runs %>%
+  # Mutate combines teams that moved cities in this time frame into the same plot
+  mutate(teamID = ifelse(teamID == "ANA", "LAA",
+                         ifelse(teamID == "MON", "WAS",
+                                ifelse(teamID =="FLO", "MIA", teamID)))) %>%
+  ggplot(aes(x = yearID)) +
+  geom_line(aes(y = team_runs, color = "team runs")) +
+  geom_line(aes(y = team_xbh, color = "team extra base hits")) +
+  facet_wrap(~ teamID) +
+  theme(axis.text.x=element_blank()) +
+  xlab("Year (1998-2019)") +
+  ylab("count") +
+  ggtitle("MLB Team Extra Base Hits and Runs From 1998-2019")
+```
+
+\newpage
+
+```{r}
+team_xbh_so_runs %>%
+  # Mutate combines teams that moved cities in this time frame into the same plot
+  mutate(teamID = ifelse(teamID == "ANA", "LAA",
+                         ifelse(teamID == "MON", "WAS",
+                                ifelse(teamID =="FLO", "MIA", teamID)))) %>%
+  ggplot(aes(x = yearID)) +
+  geom_line(aes(y = team_runs, color = "team runs")) +
+  geom_line(aes(y = team_strikeouts, color = "team strikeouts")) +
+  facet_wrap(~ teamID) +
+  theme(axis.text.x=element_blank()) +
+  xlab("Year (1998-2019)") +
+  ylab("count") +
+  ggtitle("MLB Team Strikeouts and Runs From 1998-2019")
+```
+
+To my eye, it seems fairly clear that runs follow trend with extra base hits much more closely than they do with strikeouts. For that reason, it seems to make sense that coaches would want their hitters attempting to hit more extra base hits, even if that means striking out more often.  
+
+That being said, it is also fairly clear that nearly every team is striking out MUCH more in recent years, even if they aren't seein the accompanying rise in xbh and runs. This tells me that improved pitching across the MLB may also be playing a role in these crazy strikeout numbers.
+
+\newpage
+
+```{r}
+runs = team_xbh_so_runs$team_runs
+xbh = team_xbh_so_runs$team_xbh
+so = team_xbh_so_runs$team_strikeouts
+
+summary(lm(runs ~ xbh + so))$coefficients %>%
+  kableExtra::kable() %>%
+  kableExtra::kable_styling(full_width = FALSE)
+summary(lm(runs ~ xbh + so))$r.squared
+```
+
+As you can see from the regression, an increase in 1 extra base hit leads to an expected 1.4 runs added in a season, while an increase in 1 strikeout leads to an expected .137 runs lost. With this in mind, it would make sense that, if a team/player could get some more extra base hits at the expense of striking out more, they would choose to do so.
