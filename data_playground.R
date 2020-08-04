@@ -1,10 +1,146 @@
 # Data Playground
 # A Place for me to experiment with different tables and plots
+# 
+# Sorry for the lack of comments - I might add them later, but this is more-so
+# a place for me to go ultra focus in experimentation of functions/queries
 
 library(tidyverse)
 library(RSQLite)
 library(DBI)
 library(kableExtra)
+
+# The code below shows my process of acquiring the baseball savant data
+
+library(baseballr)
+
+test_view <- scrape_statcast_savant_batter_all(start_date = "2018-05-01",
+                                  end_date = "2018-05-02")
+
+advanced_stats <- function(year) {
+  return(
+    scrape_statcast_savant_batter_all(start_date = sprintf("%s-05-01", year),
+                                      end_date = sprintf("%s-05-07", year)) %>%
+      select(pitch_name,
+             release_speed,
+             player_name,
+             game_year,
+             launch_speed,
+             launch_angle,
+             events)
+  )
+}
+
+pitch_2008 <- advanced_stats("2008")
+pitch_2009 <- advanced_stats("2009")
+pitch_2010 <- advanced_stats("2010")
+pitch_2011 <- advanced_stats("2011")
+pitch_2012 <- advanced_stats("2012")
+pitch_2013 <- advanced_stats("2013")
+pitch_2014 <- advanced_stats("2014")
+pitch_2015 <- advanced_stats("2015")
+pitch_2016 <- advanced_stats("2016")
+pitch_2017 <- advanced_stats("2017")
+pitch_2018 <- advanced_stats("2018")
+pitch_2019 <- advanced_stats("2019")
+
+
+full_savant_data <- pitch_2008 %>%
+  full_join(pitch_2009) %>%
+  full_join(pitch_2010) %>%
+  full_join(pitch_2011) %>%
+  full_join(pitch_2012) %>%
+  full_join(pitch_2013) %>%
+  full_join(pitch_2014) %>%
+  full_join(pitch_2015) %>%
+  full_join(pitch_2016) %>%
+  full_join(pitch_2017) %>%
+  full_join(pitch_2018) %>%
+  full_join(pitch_2019)
+
+write.csv(full_savant_data,
+          "full_savant_data.csv",
+          row.names = FALSE)
+
+
+
+#The code below shows some experimentation with the baseball savant data
+
+
+
+
+
+event_list <- c("single", "double", "triple", "home_run")
+
+full_savant_data %>%
+  filter(launch_speed > 0) %>%
+  filter(events %in% event_list) %>%
+  ggplot(aes(x = factor(events, level = event_list))) +
+  geom_violin(aes(y = launch_speed, color = events),
+              draw_quantiles = 0.5) +
+  ylim(60, 120)
+
+full_savant_data %>%
+  filter(launch_speed > 0) %>%
+  filter(events %in% event_list) %>%
+  ggplot(aes(x = launch_speed)) +
+  geom_freqpoly(aes(color = events))
+
+
+
+
+
+
+
+
+
+
+advanced_data <- pitch_2015 %>%
+  full_join(pitch_2016) %>%
+  full_join(pitch_2017) %>%
+  full_join(pitch_2018) %>%
+  full_join(pitch_2019)
+
+advanced_data %>%
+  filter(launch_speed > 0) %>%
+  filter(events %in% event_list) %>%
+  ggplot(aes(x = factor(events, level = event_list))) +
+  geom_violin(aes(y = launch_speed, color = events),
+              draw_quantiles = 0.5)
+
+advanced_data %>%
+  filter(pitch_type == "FF") %>%
+  ggplot(aes(x = factor(game_year))) +
+  geom_boxplot(aes(y = release_speed),
+               draw_quantiles = 0.5)
+
+advanced_data %>%
+  group_by(game_year, events) %>%
+  summarise(count = n()) %>%
+  filter(events == "strikeout")
+
+advanced_data %>%
+  group_by(pitch_type, events) %>%
+  summarise(count = n()) %>%
+  filter(events == "strikeout")
+
+advanced_data %>%
+  group_by(game_year, pitch_type, events) %>%
+  summarise(count = n()) %>%
+  filter(events == "strikeout") %>%
+  filter(pitch_type == "SL")
+
+advanced_data %>%
+  group_by(game_year, pitch_type) %>%
+  summarise(count = n(), avg_speed = mean(release_speed)) %>%
+  filter(pitch_type %in% c("SL", "FF")) %>%
+  arrange(pitch_type)
+
+
+
+
+
+
+# The code below shows some experimentation with certain queries
 
 con <- dbConnect(SQLite(), 
                  dbname = "lahmans_baseball_db.sqlite")
@@ -68,85 +204,5 @@ dbGetQuery(con,
 dbDisconnect(con)
 
 
-library(baseballr)
-
-pitch_2015 <- scrape_statcast_savant_batter_all(start_date = "2015-05-01",
-                                              end_date = "2015-05-07") %>%
-  select(pitch_type,
-         release_speed,
-         player_name,
-         game_year,
-         launch_speed,
-         events)
-
-event_list <- c("single", "double", "triple", "home_run")
-
-pitch_2015 %>%
-  filter(launch_speed > 0) %>%
-  filter(events %in% event_list) %>%
-  ggplot(aes(x = factor(events, level = event_list))) +
-  geom_violin(aes(y = launch_speed, color = events),
-              draw_quantiles = 0.5)
-
-advanced_stats <- function(year) {
-  return(
-    scrape_statcast_savant_batter_all(start_date = sprintf("%s-05-01", year),
-                                      end_date = sprintf("%s-05-07", year)) %>%
-      select(pitch_type,
-             release_speed,
-             player_name,
-             game_year,
-             launch_speed,
-             events)
-  )
-}
-
-pitch_2016 <- advanced_stats("2016")
-pitch_2017 <- advanced_stats("2017")
-pitch_2018 <- advanced_stats("2018")
-pitch_2019 <- advanced_stats("2019")
-
-pitch_2014 <- advanced_stats("2014")
-
-advanced_data <- pitch_2015 %>%
-  full_join(pitch_2016) %>%
-  full_join(pitch_2017) %>%
-  full_join(pitch_2018) %>%
-  full_join(pitch_2019)
-
-advanced_data %>%
-  filter(launch_speed > 0) %>%
-  filter(events %in% event_list) %>%
-  ggplot(aes(x = factor(events, level = event_list))) +
-  geom_violin(aes(y = launch_speed, color = events),
-              draw_quantiles = 0.5)
-
-advanced_data %>%
-  filter(pitch_type == "FF") %>%
-  ggplot(aes(x = factor(game_year))) +
-  geom_boxplot(aes(y = release_speed),
-              draw_quantiles = 0.5)
-
-advanced_data %>%
-  group_by(game_year, events) %>%
-  summarise(count = n()) %>%
-  filter(events == "strikeout")
-
-advanced_data %>%
-  group_by(pitch_type, events) %>%
-  summarise(count = n()) %>%
-  filter(events == "strikeout")
-
-advanced_data %>%
-  group_by(game_year, pitch_type, events) %>%
-  summarise(count = n()) %>%
-  filter(events == "strikeout") %>%
-  filter(pitch_type == "SL")
-
-advanced_data %>%
-  group_by(game_year, pitch_type) %>%
-  summarise(count = n(), avg_speed = mean(release_speed)) %>%
-  filter(pitch_type %in% c("SL", "FF")) %>%
-  arrange(pitch_type)
 
 
