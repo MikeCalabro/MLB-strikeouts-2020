@@ -243,5 +243,42 @@ Instead, I will now be using pitch-by-pitch data scraped from the mlb's "Basebal
 
 My process of gathering this data is shown in my "data playground", which is where I (messily) experiment with certain code. I turned the data into a csv so that it wouldn't take the rmarkdown forever to perform the functions every time I knit it.
 
+\newpage
+
+**BATTING HYPOTHESIS #3: Higher Exit Velocity = More Extra Base Hits**
+
+```{r, warning=FALSE, message=FALSE}
+# Reading in the new csv data
+# Clean names function from janitor fixed a glitch with the column names
+library(janitor)
+
+full_savant_data <- read_table2("full_savant_data.txt", col_names = TRUE) %>%
+  clean_names()
+
+event_list <- c('"field_out"', '"single"', '"double"', '"triple"', '"home_run"')
+full_savant_data %>%
+  filter(launch_speed > 0) %>%
+  filter(events %in% event_list) %>%
+  ggplot(aes(x = factor(events, level = event_list))) +
+  geom_violin(aes(y = launch_speed, color = events),
+              draw_quantiles = 0.5) +
+  ylim(60, 120) +
+  ylab("Exit Velocity (mph)") +
+  xlab("Batted Ball Type") +
+  ggtitle("MLB Launch Speeds for Different Types of Hits From 2015-2019")
+
+```
+ 
+ \newpage
+
+```{r}
+full_savant_data %>%
+  filter(launch_speed > 0) %>%
+  filter(events %in% event_list) %>%
+  ggplot(aes(x = launch_speed)) +
+  geom_freqpoly(aes(color = events))
+```
+
+It seems very clear that the slower the exit velocity of a batted ball, the more likely it is to be a single, or an out. As you hit the ball harder, your odds of getting a double, triple, or homerun increase.
 
 

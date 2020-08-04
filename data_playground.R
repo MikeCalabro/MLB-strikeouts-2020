@@ -20,9 +20,8 @@ advanced_stats <- function(year) {
   return(
     scrape_statcast_savant_batter_all(start_date = sprintf("%s-05-01", year),
                                       end_date = sprintf("%s-05-07", year)) %>%
-      select(pitch_name,
+      select(pitch_type,
              release_speed,
-             player_name,
              game_year,
              launch_speed,
              launch_angle,
@@ -55,13 +54,23 @@ full_savant_data <- pitch_2008 %>%
   full_join(pitch_2016) %>%
   full_join(pitch_2017) %>%
   full_join(pitch_2018) %>%
-  full_join(pitch_2019)
+  full_join(pitch_2019) %>%
+  arrange(desc(game_year))
+
+# write.csv / write.table kept messing up becasue of all the NA's for launch stats
+# Which is why I had to arrange by year to get the 2019 to the top
+
+glimpse(full_savant_data)
+
+write.table(full_savant_data, sep=" ",
+            file="full_savant_data.txt",
+            row.names=FALSE,
+            na = "NA")
 
 write.csv(full_savant_data,
-          "full_savant_data.csv",
-          row.names = FALSE)
-
-
+          file="full_savant_data.csv",
+          row.names=FALSE,
+          na = "NA")
 
 #The code below shows some experimentation with the baseball savant data
 
@@ -69,7 +78,7 @@ write.csv(full_savant_data,
 
 
 
-event_list <- c("single", "double", "triple", "home_run")
+event_list <- c("field_out", "single", "double", "triple", "home_run")
 
 full_savant_data %>%
   filter(launch_speed > 0) %>%
@@ -86,7 +95,15 @@ full_savant_data %>%
   geom_freqpoly(aes(color = events))
 
 
+full_savant_data %>%
+  filter(launch_speed > 0) %>%
+  ggplot(aes(x = launch_speed)) +
+  geom_freqpoly(aes(color = factor(game_year)))
 
+full_savant_data %>%
+  filter(launch_speed > 50) %>%
+  ggplot(aes(x = factor(game_year))) +
+  geom_violin(aes(y = launch_speed), draw_quantiles = 0.5, scale = "count") 
 
 
 
