@@ -235,4 +235,8 @@ summary(lm(runs ~ xbh + so))$coefficients %>%
 summary(lm(runs ~ xbh + so))$r.squared
 ```
 
-As you can see from the regression, an increase in 1 extra base hit leads to an expected 1.4 runs added in a season, while an increase in 1 strikeout leads to an expected .137 runs lost. With this in mind, it would make sense that, if a team/player could get some more extra base hits at the expense of striking out more, they would choose to do so.
+As you can see from the regression, an increase in 1 extra base hit leads to an expected 1.4 runs added in a season, while an increase in 1 strikeout leads to an expected .137 runs lost. With this in mind, it would make sense that, if a team/player could get some more extra base hits at the expense of striking out more, they would choose to do so.  
+
+Now I am going to download some new data that was not in my "journey to insight", but which will provide clearer information for the advanced data that I attempted to visualize in that document. In my "journey to insight", I downloaded data from a "Leaderboard" page on Fangraphs.com, which compiled season stats for the best ~150 players in each season.  
+
+Instead, I will now be using pitch-by-pitch data scraped from the mlb's "Baseball Savant" website using the R package "baseballr". There are many data points(~4,000 per day), So I am going to select a week of the year and gather data from that week in every year since 2007. Not only will this data be more specific than the data from Fangraphs, but I will also get true exit veloicty data for batted balls since 2015 (The year they started keeping that stat). This data will take a while to load
