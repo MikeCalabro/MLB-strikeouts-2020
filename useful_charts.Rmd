@@ -229,8 +229,9 @@ xbh = team_xbh_so_runs$team_xbh
 so = team_xbh_so_runs$team_strikeouts
 
 summary(lm(runs ~ xbh + so))$coefficients %>%
-  kableExtra::kable() %>%
+  kableExtra::kable(caption = "The Effect of Extra Base Hits and Strikeouts on Team Runs") %>%
   kableExtra::kable_styling(full_width = FALSE)
+
 summary(lm(runs ~ xbh + so))$r.squared
 ```
 
