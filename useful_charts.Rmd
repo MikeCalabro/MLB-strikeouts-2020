@@ -57,7 +57,7 @@ Of course, it is possible that this trend is due to an increase in at bats in th
 
 \newpage
 
-```{sql, tab.cap = "Strikeouts Percentage in the MLB By Season", max.print = NA}
+```{sql, tab.cap = "Strikeout Percentage in the MLB By Season", max.print = NA}
 SELECT 
   yearID AS Year,
   ROUND(CAST(SUM(SO) AS FLOAT) / SUM(AB), 3) AS "Strikeouts Per AB"
