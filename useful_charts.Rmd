@@ -239,4 +239,9 @@ As you can see from the regression, an increase in 1 extra base hit leads to an 
 
 Now I am going to download some new data that was not in my "journey to insight", but which will provide clearer information for the advanced data that I attempted to visualize in that document. In my "journey to insight", I downloaded data from a "Leaderboard" page on Fangraphs.com, which compiled season stats for the best ~150 players in each season.  
 
-Instead, I will now be using pitch-by-pitch data scraped from the mlb's "Baseball Savant" website using the R package "baseballr". There are many data points(~4,000 per day), So I am going to select a week of the year and gather data from that week in every year since 2007. Not only will this data be more specific than the data from Fangraphs, but I will also get true exit veloicty data for batted balls since 2015 (The year they started keeping that stat). This data will take a while to load
+Instead, I will now be using pitch-by-pitch data scraped from the mlb's "Baseball Savant" website using the R package "baseballr". There are many data points(~4,000 per day), So I am going to select a week of the year and gather data from that week in every year since 2007. Not only will this data be more specific than the data from Fangraphs, but I will also get true exit veloicty data for batted balls since 2015 (The year they started keeping that stat). 
+
+My process of gathering this data is shown in my "data playground", which is where I (messily) experiment with certain code. I turned the data into a csv so that it wouldn't take the rmarkdown forever to perform the functions every time I knit it.
+
+
+
