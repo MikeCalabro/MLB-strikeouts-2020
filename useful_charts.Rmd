@@ -31,7 +31,7 @@ GROUP BY yearID
 -- Assigned to variable "total_so"
 ```
 
-This table provides a clean representation of what I wish to investigate throughout this document.
+This table provides a clean representation of what I wish to investigate throughout this document - namely, the continued increase in strikeouts in Major League Baseball since 2007.
 
 ```{sql, echo=FALSE, output.var="total_so"}
 SELECT 
@@ -99,7 +99,7 @@ I find it very notable that this trend began around 2005 - shortly after the rel
 
 *Simply: Pitchers changing strategy = more strikeouts*  
 
-So to what extent is each theory accurate? To find out, I need to come up with some investigatable hypotheses, and then fudge around with the data available to judge their respective merit.
+So to what extent is each theory accurate? To find out, I need to come up with some investigatable hypotheses, and then utilize the data available to judge each theory's respective merit.
 
 \newpage
 
@@ -122,7 +122,7 @@ GROUP BY yearID
 
 While an emphasis is often placed on Homeruns, it seems to me like the most notable trend is an increase in the percentage of all extra base hits (2B, 3B, and HR are all XBHs).  
 
-Furthermore, I want to see extra base hits as a share of all hits. The logic goes that players are willing to strike out more, if it means that more of their hits are extra base hits.
+Furthermore, I want to see extra base hits as a share of all hits. The logic goes that players may be willing to strike out more, if it means that more of their hits are extra base hits.
 
 \newpage
 
@@ -252,7 +252,7 @@ My process of gathering this data is shown in my "data playground", which is whe
 # Clean names function from janitor fixed a glitch with the column names
 library(janitor)
 
-full_savant_data <- read_table2("full_savant_data.txt", col_names = TRUE) %>%
+full_savant_data <- read_csv("full_savant_data.csv", col_names = TRUE) %>%
   clean_names()
 
 event_list <- c('"field_out"', '"single"', '"double"', '"triple"', '"home_run"')
@@ -271,14 +271,201 @@ full_savant_data %>%
  
  \newpage
 
-```{r}
+```{r, message=FALSE, warning=FALSE}
 full_savant_data %>%
   filter(launch_speed > 0) %>%
   filter(events %in% event_list) %>%
   ggplot(aes(x = launch_speed)) +
-  geom_freqpoly(aes(color = events))
+  geom_freqpoly(aes(color = events)) +
+  xlab("Exit Velocity (mph)") +
+  ggtitle("MLB Exit Velocity of Different Batted Balls From 2015-2019")
 ```
 
 It seems very clear that the slower the exit velocity of a batted ball, the more likely it is to be a single, or an out. As you hit the ball harder, your odds of getting a double, triple, or homerun increase.
+
+As a player seeing this data, the message is clear: if you can hit the ball harder, you're more likely to get a hit, and you're more likely to help your team score runs and win. How can you hit the ball harder? By swinging harder, of course. 
+
+What typically hinders a player from swinging harder is the knowledge that they'll be less likely to make contact with the ball. However, with the knowledge that an extra base hit is more valuable than a whiff is detrimental, it would make sense to start putting more effort into every swing.
+
+\newpage
+
+**BATTING HYPOTHESIS #4: The Frequency of Low Exit Velo Batted Balls is Decreasing**  
+
+I propose that, if my thought is correct, batters are moving towards replacing the balls hit ~80-90 mph with either balls hit harder, or strikeouts. Therefore, we should expect to see less of the soft hit outs/singles.
+
+.
+```{r, message=FALSE, warning=FALSE}
+full_savant_data %>%
+  filter(launch_speed > 0) %>%
+  ggplot(aes(x = launch_speed)) +
+  geom_freqpoly(aes(color = factor(game_year))) +
+  xlab("Exit Velocity (mph)") +
+  ggtitle("MLB Exit Velocity Frequency by Year From 2015-2019")
+```
+
+It would be helpful to have data for this dating back to 2008, but instead we only have 2015-2019. With the data that we do have, it is quite clear that the soft-hit ball frequency has fallen pretty dramatically in 2018/2019. However, the peak for 2017 was the highest of the 5 years, which negates the idea that there is a constant trend. 
+
+\newpage
+
+```{r}
+full_savant_data %>%
+  filter(launch_speed > 50) %>%
+  ggplot(aes(x = factor(game_year))) +
+  geom_violin(aes(y = launch_speed), draw_quantiles = 0.5, scale = "count") +
+  geom_hline(yintercept = 82, color = "red", alpha = 0.5) +
+  xlab("Year") +
+  ylab("Exit Velocity (mph)") +
+  ggtitle("MLB Exit Velocity Distribution by Year From 2015-2019")
+```
+
+I predict that, in the coming years, the bump which occurs around the red line for the exit velocity violin plots will get thinner and thinner as batters and managers continue to realize that making soft contact is a suboptimal strategy, and that striking out isn't bad if it comes with a higher chance of hitting the ball harder.  
+
+One more thing I want to mention is that it makes sense why an individual would rather hit a soft flyout or groundout than get struck out. Quite often, a strikeout SEEMS and FEELS like a much worse outcome than a weak groundout, even though, most of the time, they both are simply equivalent to 1 out. As players, coaches, and managers begin to trust the data more, I believe the shame that comes with striking out will continue to go away.
+
+OKAY! I think I have exhausted the batting hypotheses. Let's look at the roll pitching has played in the increase in strikeouts in the MLB 
+
+\newpage
+
+**PITCHING HYPOTHESIS 1: Pitchers Are Throwing Harder Over Time**
+
+```{r}
+full_savant_data %>%
+  filter(pitch_type == '"FF"') %>% #FF = Four seam Fastball
+  filter(release_speed > 82) %>%
+  ggplot(aes(x = factor(game_year))) +
+  geom_violin(aes(y = release_speed), draw_quantiles = 0.5) +
+  ylab("Pitch Speed (mph)") +
+  xlab("Year") +
+  ggtitle("MLB Fastball Speed Frequency by Year From 2008-2019")
+  
+```
+
+Pitch Velocity has been generally rising (slowly) over the past decade, but not by much.
+
+\newpage
+
+```{r, message = FALSE}
+fastball_outcomes <- full_savant_data %>%
+  filter(pitch_type == '"FF"') %>%
+  filter(release_speed > 87) %>%
+  filter(events %in% c('"field_out"', '"single"', '"double"', '"triple"',
+                       '"home_run"', '"walk"', '"strikeout"')) %>%
+  group_by(release_speed, events) %>%
+  summarise(count = n()) %>%
+  group_by(release_speed) %>%
+  mutate(share = count / sum(count)) %>%
+  filter(events == '"strikeout"') %>%
+  filter(count > 5) 
+
+fastball_outcomes %>%
+  ggplot(aes(x = release_speed, y = share)) +
+  geom_point(aes(color = count)) +
+  stat_smooth(geom = "line", method = "lm", se = FALSE, color = "red", alpha = 0.45) +
+  xlab("Fastball Speed") +
+  ylab("Share of Final Pitches Ending in Strikeout") +
+  ggtitle("The Effect of Fastball Speed on Strikeout Percentage")
+```
+
+\newpage
+
+```{r}
+y = fastball_outcomes$share
+x = fastball_outcomes$release_speed
+
+summary(lm(y ~ x))$coefficients %>%
+  kableExtra::kable(caption = "The Effect of Fastball Speed on Strikeout Percentage") %>%
+  kableExtra::kable_styling(full_width = FALSE)
+
+summary(lm(y ~ x))$r.squared
+```
+
+
+
+\newpage
+
+```{r}
+key_pitches <- c('"SL"', '"CU"', '"CH"', '"FF"', '"SI"', '"FT"')
+# SL - Slider
+# CU - Curveball
+# CH - Changeup
+# FF - Four-Seam Fastball
+# SI - Sinker
+# FT - Two-Seam Fastball
+
+full_savant_data %>%
+  filter(pitch_type %in% key_pitches) %>%
+  group_by(game_year, pitch_type) %>%
+  summarise(count = n()) %>%
+  group_by(game_year) %>%
+  mutate(Share = count / sum(count)) %>%
+  ggplot(aes(x = game_year)) +
+  geom_line(aes(y = Share, color = pitch_type)) +
+  xlim(2008, 2019) +
+  xlab("Year") +
+  ggtitle("Pitch Frequency in the MLB by Year")
+```
+
+Sliders have slowly been making their way as the go-to choice for offspeed pitch. If pitchers are adapting to get more strikeouts, it would make sense that sliders as a share of pitches are increasing because they are hard to hit, and/or hard to hit well.
+
+\newpage
+
+**PITCHING HYPOTHESIS #2: Sliders are a Hard Pitch to Hit/Hit Hard**
+
+```{r}
+full_savant_data %>%
+  filter(launch_speed > 0) %>%
+  filter(pitch_type %in% key_pitches) %>%
+  ggplot(aes(x = factor(pitch_type, level = key_pitches))) +
+  geom_violin(aes(y = launch_speed), draw_quantiles = 0.5) +
+  xlab("Pitch Type") +
+  ylab("Exit Velocity (mph)") +
+  ggtitle("MLB Exit Velocity by Pitch Type from 2015-2019")
+```
+
+Sliders are actually hit slightly harder than changeups or curveballs on average.
+
+\newpage
+
+```{r}
+full_savant_data %>%
+  filter(events %in% c('"field_out"', '"single"', '"double"',
+                       '"triple"', '"home_run"', '"strikeout"')) %>%
+  mutate(events = ifelse(events == '"double"', '"extra_base_hit"',
+                         ifelse(events == '"triple"', '"extra_base_hit"',
+                                ifelse(events == '"home_run"', '"extra_base_hit"', events)))) %>%
+  filter(pitch_type %in% key_pitches) %>%
+  group_by(pitch_type, events) %>%
+  summarise(count = n()) %>%
+  group_by(pitch_type) %>%
+  mutate(share = count / sum(count)) %>%
+  arrange(events) %>%
+  kableExtra::kable(caption = "Results of Different Pitch Types, 2008-2019")
+```
+
+\newpage
+
+```{r}
+full_savant_data %>%
+  filter(events %in% c('"field_out"', '"single"', '"double"', '"triple"', '"home_run"', '"strikeout"')) %>%
+  mutate(events = ifelse(events == '"double"', '"extra_base_hit"',
+                         ifelse(events == '"triple"', '"extra_base_hit"',
+                                ifelse(events == '"home_run"', '"extra_base_hit"', events)))) %>%
+  filter(pitch_type %in% key_pitches) %>%
+  mutate(pitch_type = factor(pitch_type, levels = key_pitches)) %>%
+  ggplot() +
+  geom_bar(aes(x = pitch_type, fill = events), position = "fill", color = "gray") +
+  xlab("Pitch Type") +
+  ylab("Share") +
+  ggtitle("At Bat Outcome Based on Pitch Type")
+```
+
+When thrown as the last pitch of an at bat, A slider ("SL") has the greatest chance to strike out a batter, and offers the lowest chance to get an extra-base hit. It would make sense that pitchers would want to throw this pitch more often, since their goal is minimizing runs, which as we saw earlier goes hand in had with limiting extra base hits.  
+
+Similarly, sinkers ("SI") were a much more popular pitch in 2008 (the 2nd most popular in fact!), but their frequency has been on a sharp decline since then. This also seems to fit into the logic that pitchers want to limit runs, and sinkers do not help that cause.
+
+So why would Sliders and Curveballs ("CU") not be thrown as often as fastballs? And why are Curveballs thrown less often than Sliders? My guess would be Accuracy, but I currently do not have the data necessary to investigate whether that may be true.
+
+
+
 
 
