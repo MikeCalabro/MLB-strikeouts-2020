@@ -8,15 +8,15 @@ The work in here showcases my attempt to investigate the drastic increase in Str
 
 # Important Files
 
-data_playground.R - where I experiment with queries and functions, and where I did the work to create full_savant_data.csv.  
-Messiness - 8/10
-
-journey_to_insight.Rmd - displays my process of looking through the data looking for trends.  
-Messiness - 6/10
-
 **useful_charts.Rmd - cleanly displays the most notable charts I created in journey_to_insight, along with new plots.
 Each plot is linked to a specific hypothesis that I was looking into**.  
-**Messiness - 2/10**
+**Messiness - 2/10**  
+
+journey_to_insight.Rmd - displays my process of looking through the data looking for trends.  
+Messiness - 6/10  
+
+data_playground.R - where I experiment with queries and functions, and where I did the work to create full_savant_data.csv.  
+Messiness - 8/10  
 
 # What Data did you use?
 
