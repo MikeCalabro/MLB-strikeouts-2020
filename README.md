@@ -8,14 +8,14 @@ The work in here showcases my attempt to investigate the drastic increase in Str
 
 # Important Files
 
-data_playground.R - where I experiment with queries and functions, and where I did the work to create full_savant_data.csv
+data_playground.R - where I experiment with queries and functions, and where I did the work to create full_savant_data.csv.  
 Messiness - 8/10
 
 journey_to_insight.Rmd - displays my process of looking through the data looking for trends.  
 Messiness - 6/10
 
 **useful_charts.Rmd - cleanly displays the most notable charts I created in journey_to_insight, along with new plots.
-Each plot is linked to a specific hypothesis that I was looking into**
+Each plot is linked to a specific hypothesis that I was looking into**.  
 **Messiness - 2/10**
 
 # What Data did you use?
@@ -25,15 +25,15 @@ There are four sources of data in this repository:
 1. lahmans_baseball_db.sqlite -  
 contains season hitting and pitching stats for every MLB batter and pitcher from 1871-2019
 
-2. fangraphs_batting.csv - 
+2. fangraphs_batting.csv -  
 contains advanced hitting stats for top MLB hitters from 2008-2019
 Acquired from the Fangraphs.com website
 
-3. fangraphs_pitching.csv - 
+3. fangraphs_pitching.csv -  
 contains advanced pitching stats for top MLB pitchers from 2007-2019
 Acquired from the Fangraphs.com website
 
-4. full_savant_data.csv -
+4. full_savant_data.csv -  
 contains pitch by pitch data from May 1 - May 7 for every year from 2008-2019
 includes exit velocity and launch angle data for batted balls from 2015-2019
 Acquired from the Baseballsavant.com website, accessed via the baseballr R package
