@@ -85,7 +85,7 @@ strikeout_percent %>%
   geom_line() +
   xlim(1995, 2020) +
   ylab("Share of At Bats Resulting in Strikeouts") +
-  ggtitle("Strikeouts Per At Bat Each MLB Season Since 1995", 
+  ggtitle("Strikeouts Per At Bat in Each MLB Season Since 1995", 
           subtitle = "A new record has been set every year since 2007")  
 ```
 
