@@ -459,7 +459,7 @@ full_savant_data %>%
   ggtitle("At Bat Outcome Based on Pitch Type")
 ```
 
-When thrown as the last pitch of an at bat, A slider ("SL") has the greatest chance to strike out a batter, and offers the lowest chance to get an extra-base hit. It would make sense that pitchers would want to throw this pitch more often, since their goal is minimizing runs, which as we saw earlier goes hand in had with limiting extra base hits.  
+When thrown as the last pitch of an at bat, a slider ("SL") has the greatest chance to strike out a batter, and offers the lowest chance to get an extra-base hit. It would make sense that pitchers would want to throw this pitch more often, since their goal is minimizing runs, which as we saw earlier goes hand in had with limiting extra base hits.  
 
 Similarly, sinkers ("SI") were a much more popular pitch in 2008 (the 2nd most popular in fact!), but their frequency has been on a sharp decline since then. This also seems to fit into the logic that pitchers want to limit runs, and sinkers do not help that cause.
 
