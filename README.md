@@ -8,12 +8,13 @@ The work in here showcases my attempt to investigate the drastic increase in Str
 
 # Important Files
 
-**useful_charts.Rmd - cleanly displays the most notable charts I created in journey_to_insight, along with new plots.
+**useful_charts.pdf - cleanly displays the most notable charts I created in journey_to_insight, along with new plots.
 Each plot is linked to a specific hypothesis that I was looking into**.  
 **Cleanliness - 9/10**  
 
-journey_to_insight.Rmd - displays my process of looking through the data looking for trends.  
-Cleanliness - 5/10  
+**journey_to_insight.pdf - displays my process of looking through the data looking for trends.
+Also provides better information on the Lahman Baseball Database, and my motivations throughout my Exploratory Data Analysis process.  
+Cleanliness - 4/10**
 
 data_playground.R - where I experiment with queries and functions, and where I did the work to create full_savant_data.csv.  
 Cleanliness - 2/10  
