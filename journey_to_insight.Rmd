@@ -2,19 +2,17 @@
 title: "Deriving Insight From Lahman's Baseball Database"
 author: "Michael Calabro"
 date: "7/31/2020"
-output: html_document
+output: pdf_document
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
-<br>
+
 Welcome to my journey_to_insight.Rmd file! In this markdown, I will be going step by step through my process of using the Lahman Baseball Database to seek answers to my question regarding Strikeouts in Major League Baseball.  
-<br>  
-<center>
+
 **What is the Lahman Baseball Database? And what is your question about MLB strikeouts?**
-</center>
-<br>
+
 The Lahman Baseball Database contains MLB statistics and data from 1871-2019...it contains nearly 250 years worth of MLB data to explore!  Documentation for the database and all of its tables and columns can be found using [this link](http://www.seanlahman.com/files/database/readme2019.txt).  
 I downloaded the SQLite database into my RStudio Project, and can access all of its information with the following commands.
 
@@ -32,13 +30,15 @@ library(kableExtra)
 con <- dbConnect(SQLite(), 
                  dbname = "lahmans_baseball_db.sqlite")
 ```
-<br>  
+ 
 This "con" keyword now allows me to connect to the database. To view the list of tables in the database, I simply run the code below.  
 
 ```{r}
 dbListTables(con)
 ```
-<br>  
+ 
+\newpage 
+
 To view data from a specific table, I use the dbGetQuery function. The "batting" table will be key to my analysis, let's check it out.
 
 ```{r}
@@ -49,15 +49,18 @@ query <-  "
           LIMIT 5
           "
 
-# Then I send it through the DBGetQuery function, along with the "con" connection, to run the query
+# Then I send it through the DBGetQuery function,
+# along with the "con" connection, to run the query
 dbGetQuery(con, query)
 
-# And for tables that aren't so wide, the kable funtion with kable_styling makes the table very presentable
+# And for tables that aren't so wide,
+# the kable funtion with kable_styling makes the table very presentable
 dbGetQuery(con, query) %>%
   kable() %>%
   kable_styling(full_width = FALSE, bootstrap_options = "bordered")
 
-# I like the kable and think I'll use it a lot, so I am going to make a function kable_query for efficiency
+# I like the kable and think I'll use it a lot,
+# so I am going to make a function kable_query for efficiency
 kable_query <- function(con, query){
   return(
     dbGetQuery(con, query) %>%
@@ -66,13 +69,13 @@ kable_query <- function(con, query){
   )
 }
 ```
-<br>  
+ 
 As we can see, every row in the batter table consists of a player, a year, and all of the player's batting statistics in that year.  
-<br>
-<center>
+
+\newpage
+
 **So What is your question about Strikeouts in the MLB?**
-</center>
-<br>  
+
 A few years back (in 2018 I believe) I read an article which mentioned the fact that MLB players are striking out more and more every year, always breaking the single season record for total strikeouts. A more updated article, linked [here](https://www.espn.com/mlb/story/_/id/27694758/mlb-sets-strikeout-record-12th-straight-season), notes that this increase in strikeouts has been happening every year since 2008! Let's see if our Lahman data shows the same trend.
 
 ```{r}
@@ -86,8 +89,14 @@ query <-  "
           "
 
 kable_query(con, query)
+```
 
-# Now I can use ggplot, with geom_point to make a scatterplot, geom_line to make a line graph, or both!
+\newpage
+
+```{r}
+# Now I can use ggplot, with geom_point to make a scatterplot,
+# geom_line to make a line graph, or both!
+# 
 # Also, using %>% allows me to "pipe" my data into certain functions, like ggplot
 dbGetQuery(con, query) %>%
   ggplot(aes(x = yearID, y = total_strikeouts)) +
@@ -96,12 +105,13 @@ dbGetQuery(con, query) %>%
   ggtitle("Yearly Total MLB Strikeouts From 2007-2019")
 ```
 
+
 So what is causing this increase in strikeouts every year?? That is what I wish to investigate throughout the rest of this document/project.  
-<br>
-<center>
+
+\newpage
+
 **HYPOTHOSES**
-</center>
-<br>
+
 
 * Perhaps there are just more at bats every year, while strikeouts per at bat is remaining constant 
 
@@ -109,13 +119,9 @@ So what is causing this increase in strikeouts every year?? That is what I wish 
 
 * Perhaps pitching skill is improving faster than batting skill in the MLB  
 
-<br>
-<u>
-<center>
+
 **Strikeouts Per At Bat**
-</center>
-</u>
-<br>  
+
 
 This hypothesis is pretty easy to check. We just need to divide total strikeouts by total at bats.
 
@@ -180,7 +186,8 @@ They don't appear to be too correlated. Let's check it out with a scatterplot.
 dbGetQuery(con, query) %>%
   ggplot(aes(x = xbh_per_at_bat, y = strikeouts_per_at_bat)) +
   geom_point() +
-  # Stat_smooth, with geom=line and method=lm, adds a regression line of best fit to the graph
+  # Stat_smooth, with geom=line and method=lm,
+  # adds a regression line of best fit to the graph
   stat_smooth(geom='line', method = "lm", alpha=0.3, se=FALSE, color = "blue")
 ```
 
@@ -224,13 +231,9 @@ There is certainly *some* correlation here - extra base hits and strikeouts have
 
 * I also want to look at what is more correlated with scoring runs - strikeouts or extra base hits. Perhaps extra base hits have a larger effect on scoring runs than strikeouts, so players are incentivized to hit extra base hits at the expense of striking out more for the sake of winning more games.
 
-<br>
-<u>
-<center>
+
 **Salary and Strikeouts**
-</center>
-</u>
-<br> 
+
 
 ```{r}
 query <- "
@@ -253,6 +256,8 @@ query <-  "
 
 kable_query(con, query)
 ```
+
+\newpage
 
 ```{r}
 query <-  "
@@ -314,6 +319,8 @@ dbGetQuery(con, query) %>%
   stat_smooth(geom='line', method = "lm", alpha=0.3, se=FALSE, color = "blue")
 
 ```
+
+\newpage
 
 Obviously little to no correlation there. Interesting. To do this better I would want to know stats for a year before a contract is signed, but for now this is a fine approximation.
 
@@ -408,7 +415,7 @@ I am pretty sure the MLB started keeping stats like exit velocity around 2000, s
 
 I found some data from [Fangraphs](https://www.fangraphs.com/leaders.aspx?pos=all&stats=bat&lg=all&qual=y&type=c,11,12,5,9,10,16,211&season=2019&month=0&season1=2008&ind=1&team=0&rost=0&age=0&filter=&players=0&startdate=2008-01-01&enddate=2019-12-31) from 2008-2019 which includes a Hard Hit %, which I think will act similarly to exit velocity in analysis.
 
-```{r}
+```{r, warning=FALSE, message=FALSE}
 fangraphs_batting <- read_csv("fangraphs_batting.csv")
 
 head(fangraphs_batting)
@@ -433,7 +440,7 @@ advanced_batting %>%
   geom_line(aes(y = avg_hard_percentage, color = "average hard hit ball per ball in play")) +
   ylab("percentage")
 ```
-<br>
+
 The strikeout pattern is not the same as the one for all players, but it is quite similar. Also, the hard hit percentage has risen dramatically, especially in the last few years, as the strikeout percentage has similarly been rising dramatically.  
 
 ```{r}
@@ -448,7 +455,7 @@ x <- advanced_batting$avg_hard_percentage
 #Prints the R-squared of the regression of strikeouts on hard hit balls
 summary(lm(y ~ x))$r.squared
 ```
-<br>
+
 Can we see this pattern with individuals?  
 This is going to take a bit of data manipulation.
 
@@ -480,14 +487,14 @@ fangraphs_batting %>%
   geom_line(aes(y = Hard_Percent, color = "Hard Hit Ball %")) +
   facet_wrap(~ Name)
 ```
-<br>
+
 This visualization did not help much, but it look pretty cool.  
 
 I still think my hypothesis has legs. Just to make it crystal clear, my hypothesis is as follows:  
-<br>
+
 **A FUNDAMENTAL CHANGE IN HITTING MINDSET IN THE MLB IS RESPONSIBLE FOR THE HUGE INCREASE IN STRIKEOUTS IN RECENT YEARS. SPECIFICALLY, PLAYERS ARE CONSCIOUSLY SWINGING HARDER, KNOWING THAT THEY MAY WHIFF MORE OFTEN, BUT ALSO KNOWING THAT THEY WILL GET MORE EXTRA BASE HITS. THIS CHANGE IN MINDSET IS MOTIVATED BY GOAL OF SCORING AS MANY RUNS AS POSSIBLE, BECAUSE, ALL ELSE EQUAL, MORE RUNS MEANS MORE WINS.**
 
-<br>
+
 I want to make a graph that shows team strikeouts, extra base hits, and runs scored since 2000. Let's see if I can get that.
 
 ```{r}
@@ -551,7 +558,7 @@ query <-  "
 
 dbGetQuery(con, query)
 ```
-<br>
+
 IPOuts appears to be a stat showing the number of outs that pitcher got that season. Therefore, SO/IPOuts would be the percentage of outs that were strikeouts. So I can run a fairly simple query that will give me the top strikeout pitchers of all time.
 
 ```{r}
@@ -580,13 +587,13 @@ Some clear observations here:
 
 * The list is heavily populated with current MLB pitchers
 
-* Of the names I recognize, these pitchers throw HEAT
+* Of the names I recognize, these pitchers throw HEAT  
 
-<br>
+
 
 I have downloaded some pitching data [from Fangraphs](https://www.fangraphs.com/leaders.aspx?pos=all&stats=pit&lg=all&qual=y&type=c,7,8,13,-1,36,75,76&season=2019&month=0&season1=2007&ind=1&team=&rost=&age=&filter=&players=&startdate=&enddate=). Now I can look at the correlation between fastball speed and strikeouts more precisely.
 
-```{r}
+```{r, message=FALSE, warning=FALSE}
 fangraphs_pitching <- read_csv("fangraphs_pitching.csv")
 
 head(fangraphs_pitching)
@@ -640,7 +647,7 @@ fangraphs_pitching %>%
              aes(xintercept = avg), color = "red") +
   facet_wrap(~ Season)
 ```
-<br>
+
 Think this could be better shown as a box/violin plot.  
 
 ```{r}
@@ -652,4 +659,3 @@ fangraphs_pitching %>%
 ```
 
 Better. So we see that pitchers who throw harder, all else equal, get more strikeouts. And we also know that pitchers have thrown harder fastablls on average ofer the past 12 years. This seems to be a good explanation as to potentially why more batters are striking out. 
-
