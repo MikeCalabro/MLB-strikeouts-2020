@@ -31,7 +31,9 @@ GROUP BY yearID
 -- Assigned to variable "total_so"
 ```
 
-This table provides a clean representation of what I wish to investigate throughout this document - namely, the continued increase in strikeouts in Major League Baseball since 2007.
+This table provides a clean representation of what I wish to investigate throughout this document:  
+
+The continued increase in strikeouts in Major League Baseball since 2007.
 
 ```{sql, echo=FALSE, output.var="total_so"}
 SELECT 
@@ -333,7 +335,7 @@ full_savant_data %>%
   filter(pitch_type == '"FF"') %>% #FF = Four seam Fastball
   filter(release_speed > 82) %>%
   ggplot(aes(x = factor(game_year))) +
-  geom_violin(aes(y = release_speed), draw_quantiles = 0.5) +
+  geom_boxplot(aes(y = release_speed)) +
   ylab("Pitch Speed (mph)") +
   xlab("Year") +
   ggtitle("MLB Fastball Speed Frequency by Year From 2008-2019")
@@ -361,10 +363,13 @@ fastball_outcomes %>%
   ggplot(aes(x = release_speed, y = share)) +
   geom_point(aes(color = count)) +
   stat_smooth(geom = "line", method = "lm", se = FALSE, color = "red", alpha = 0.45) +
+  stat_smooth(geom = "line", method = "lm", formula = "y ~ poly(x, 2)", se = FALSE, color = "blue", alpha = 0.45) +
   xlab("Fastball Speed") +
   ylab("Share of Final Pitches Ending in Strikeout") +
   ggtitle("The Effect of Fastball Speed on Strikeout Percentage")
 ```
+
+The polynomial regression (blue line) seems to fit the data slightly better than the linear regression (red line). However, for the purposes of interpretaion and clarity, I am going to create a linear model on the next page.
 
 \newpage
 
@@ -379,7 +384,9 @@ summary(lm(y ~ x))$coefficients %>%
 summary(lm(y ~ x))$r.squared
 ```
 
+According to the model, every increase in 1 mph of a fastball should result in a 2.3% higher chance of getting a strikeout for the final pitch of an at bat. Therefore, 1 mph increase we have seen over the past decade could very well be contributing to the rise in strikeouts.  
 
+On the next page, I will be visualizing the usage of different pitches over the past decade.
 
 \newpage
 
