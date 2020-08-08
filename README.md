@@ -16,9 +16,6 @@ Each plot is linked to a specific hypothesis that I was looking into**.
 Also provides better information on the Lahman Baseball Database, and my motivations throughout my Exploratory Data Analysis process.  
 Cleanliness - 4/10**
 
-data_playground.R - where I experiment with queries and functions, and where I did the work to create full_savant_data.csv.  
-Cleanliness - 2/10  
-
 # The Data
 
 There are four sources of data in this repository:
