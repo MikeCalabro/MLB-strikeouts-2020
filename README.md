@@ -19,7 +19,7 @@ Cleanliness - 4/10**
 data_playground.R - where I experiment with queries and functions, and where I did the work to create full_savant_data.csv.  
 Cleanliness - 2/10  
 
-# The Data I Used
+# The Data
 
 There are four sources of data in this repository:
 
