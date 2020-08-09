@@ -26,6 +26,7 @@ query <-    "
               SUM(SO) AS total_strikeouts,
               CAST(SUM(SO) AS FLOAT) / SUM(AB) AS strikeouts_per_at_bat
             FROM batting
+            WHERE yearID > 1919
             GROUP BY yearID
                   "
 
@@ -38,7 +39,7 @@ strikeout_df
 
 ```{r}
 # Turns the strikeouts per at bat data into a time series
-strikeout_ts <- ts(strikeout_df[, 4], start = 1871, frequency = 1)
+strikeout_ts <- ts(strikeout_df[, 4], start = 1920, frequency = 1)
 ```
 
 ```{r}
@@ -75,9 +76,47 @@ Box.test(strikeout_ts, lag = 24, fitdf = 0, type = "Lj")
 ```
 
 ```{r}
-train <- subset(strikeout_ts, end = 120)
-test <- subset.ts(strikeout_ts, start = 121, end = length(gold))
+train <- subset(strikeout_ts, end = 80)
+test <- subset(strikeout_ts, start = 81, end = length(strikeout_ts))
 ```
 
+```{r}
+autoplot(train) +
+  stat_smooth(geom = "line", alpha = 0.4, method = "lm", color = "blue") +
+  stat_smooth(geom = "line", alpha = 0.4, color = "red") +
+  xlab("Season") +
+  ylab("% of ABs Ending in a Strikeout") +
+  ggtitle("MLB Strikeouts Training Data: 1871-1991")
+```
 
+```{r, warning=FALSE}
+autoplot(train) + 
+  autolayer(ma(train, 1), series = "Data") +
+  autolayer(ma(train, 5), series = "4 yr MA") +
+  autolayer(ma(train, 9), series = "8 yr MA") +
+  autolayer(ma(train, 13), series = "12 yr MA") +
+  autolayer(ma(train, 17), series = "16 yr MA") +
+  autolayer(ma(train, 21), series = "20 yr MA") +
+  xlab("Season") +
+  ylab("% of ABs Ending in a Strikeout") +
+  ggtitle("MLB Strikeouts Training Data Moving Averages: 1871-1991")
+```
+
+```{r, warning=FALSE}
+autoplot(train) + 
+  autolayer(ma(train, 1), series = "Data") +
+  autolayer(ma(train, 9), series = "8 yr MA") +
+  xlab("Season") +
+  ylab("% of ABs Ending in a Strikeout") +
+  ggtitle("MLB Strikeouts Training Data 8 yr Moving Average: 1871-1991")
+```
+```{r}
+autoplot(forecast(ma(train, 9), h = 35)) +
+  autolayer(strikeout_ts, series = "Data")
+```
+
+```{r}
+autoplot(forecast(ma(strikeout_ts, 9), h = 15)) +
+  autolayer(strikeout_ts, series = "Data")
+```
 
