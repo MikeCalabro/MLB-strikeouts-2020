@@ -1,5 +1,5 @@
 ---
-title: "R Notebook"
+title: "Strikeout Time Series Notebook"
 output: html_notebook
 ---
 
@@ -30,6 +30,7 @@ query <-    "
             GROUP BY yearID
                   "
 
+# Assigns the data created by the query to a variable strikeout_df
 strikeout_df <- dbGetQuery(con, query)
 
 dbDisconnect(con)
@@ -43,6 +44,7 @@ strikeout_ts <- ts(strikeout_df[, 4], start = 1920, frequency = 1)
 ```
 
 ```{r}
+# Plots the time series
 autoplot(strikeout_ts) +
   xlab("Season") +
   ylab("% of ABs Ending in a Strikeout") +
@@ -50,6 +52,7 @@ autoplot(strikeout_ts) +
 ```
 
 ```{r}
+# Plots the time series with a linear regression fit (blue) and an LOESS fit
 autoplot(strikeout_ts) +
   stat_smooth(geom = "line", alpha = 0.4, method = "lm", color = "blue") +
   stat_smooth(geom = "line", alpha = 0.4, color = "red") +
@@ -59,28 +62,34 @@ autoplot(strikeout_ts) +
 ```
 
 ```{r}
+# Plots the difference between each data point y and y-1
 autoplot(diff(strikeout_ts)) +
   stat_smooth(geom = "line", alpha = 0.4, color = "red")
 ```
 
 ```{r}
+# Shows which lag is most predictive of the next data point. More linear = better predictor
 gglagplot(strikeout_ts)
 ```
 
 ```{r}
+# Shows the correlation of the lag plots (lag numbers on x axis, correlation on y axis)
 ggAcf(strikeout_ts)
 ```
 
 ```{r}
+# Tests if the time-series is simply white noise... p > 0.05 would suggest just white noise
 Box.test(strikeout_ts, lag = 24, fitdf = 0, type = "Lj")
 ```
 
 ```{r}
+# Creates a training set of data, and a testing set of data (training = 1920-1990, test = 1991-2019)
 train <- subset(strikeout_ts, end = 80)
 test <- subset(strikeout_ts, start = 81, end = length(strikeout_ts))
 ```
 
 ```{r}
+# Plots the training data with 2 lines of fit
 autoplot(train) +
   stat_smooth(geom = "line", alpha = 0.4, method = "lm", color = "blue") +
   stat_smooth(geom = "line", alpha = 0.4, color = "red") +
@@ -90,6 +99,7 @@ autoplot(train) +
 ```
 
 ```{r, warning=FALSE}
+# Plots the training data with different moving averages
 autoplot(train) + 
   autolayer(ma(train, 1), series = "Data") +
   autolayer(ma(train, 5), series = "4 yr MA") +
@@ -111,11 +121,13 @@ autoplot(train) +
   ggtitle("MLB Strikeouts Training Data 8 yr Moving Average: 1871-1991")
 ```
 ```{r}
+# Plots a 35 year forecast from the 8 year moving average of the training data, along with the full raw time series
 autoplot(forecast(ma(train, 9), h = 35)) +
   autolayer(strikeout_ts, series = "Data")
 ```
 
 ```{r}
+# Plots a 15 year forecast from the 8 year moving average of the full time series, along with the time series
 autoplot(forecast(ma(strikeout_ts, 9), h = 15)) +
   autolayer(strikeout_ts, series = "Data")
 ```
