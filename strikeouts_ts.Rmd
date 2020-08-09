@@ -1,0 +1,83 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+```{r}
+library(tidyverse)
+library(DBI)
+library(RSQLite)
+library(kableExtra)
+library(forecast)
+
+```
+
+```{r}
+# Establishes my connection to the Lahman database
+con <- dbConnect(SQLite(), 
+                 dbname = "lahmans_baseball_db.sqlite")
+```
+
+```{r}
+query <-    "
+            SELECT 
+              yearID,
+              SUM(AB) AS total_at_bats,
+              SUM(SO) AS total_strikeouts,
+              CAST(SUM(SO) AS FLOAT) / SUM(AB) AS strikeouts_per_at_bat
+            FROM batting
+            GROUP BY yearID
+                  "
+
+strikeout_df <- dbGetQuery(con, query)
+
+dbDisconnect(con)
+
+strikeout_df
+```
+
+```{r}
+# Turns the strikeouts per at bat data into a time series
+strikeout_ts <- ts(strikeout_df[, 4], start = 1871, frequency = 1)
+```
+
+```{r}
+autoplot(strikeout_ts) +
+  xlab("Season") +
+  ylab("% of ABs Ending in a Strikeout") +
+  ggtitle("Strikeout Percentage in the MLB Since 1871")
+```
+
+```{r}
+autoplot(strikeout_ts) +
+  stat_smooth(geom = "line", alpha = 0.4, method = "lm", color = "blue") +
+  stat_smooth(geom = "line", alpha = 0.4, color = "red") +
+  xlab("Season") +
+  ylab("% of ABs Ending in a Strikeout") +
+  ggtitle("Strikeout Percentage in the MLB Since 1871 (With Regression Lines)")
+```
+
+```{r}
+autoplot(diff(strikeout_ts)) +
+  stat_smooth(geom = "line", alpha = 0.4, color = "red")
+```
+
+```{r}
+gglagplot(strikeout_ts)
+```
+
+```{r}
+ggAcf(strikeout_ts)
+```
+
+```{r}
+Box.test(strikeout_ts, lag = 24, fitdf = 0, type = "Lj")
+```
+
+```{r}
+train <- subset(strikeout_ts, end = 120)
+test <- subset.ts(strikeout_ts, start = 121, end = length(gold))
+```
+
+
+
