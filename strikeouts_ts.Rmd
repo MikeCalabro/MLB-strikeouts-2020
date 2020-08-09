@@ -1,9 +1,11 @@
 ---
 title: "Strikeout Time Series Notebook"
-output: html_notebook
+output:
+  pdf_document: default
+  html_notebook: default
 ---
 
-```{r}
+```{r, message=FALSE, warning=FALSE}
 library(tidyverse)
 library(DBI)
 library(RSQLite)
@@ -34,10 +36,12 @@ query <-    "
 strikeout_df <- dbGetQuery(con, query)
 
 dbDisconnect(con)
-
-strikeout_df
 ```
 
+```{r}
+head(strikeout_df)
+```
+\newpage
 ```{r}
 # Turns the strikeouts per at bat data into a time series
 strikeout_ts <- ts(strikeout_df[, 4], start = 1920, frequency = 1)
@@ -50,7 +54,7 @@ autoplot(strikeout_ts) +
   ylab("% of ABs Ending in a Strikeout") +
   ggtitle("Strikeout Percentage in the MLB Since 1871")
 ```
-
+\newpage
 ```{r}
 # Plots the time series with a linear regression fit (blue) and an LOESS fit
 autoplot(strikeout_ts) +
@@ -60,23 +64,23 @@ autoplot(strikeout_ts) +
   ylab("% of ABs Ending in a Strikeout") +
   ggtitle("Strikeout Percentage in the MLB Since 1871 (With Regression Lines)")
 ```
-
+\newpage
 ```{r}
 # Plots the difference between each data point y and y-1
 autoplot(diff(strikeout_ts)) +
   stat_smooth(geom = "line", alpha = 0.4, color = "red")
 ```
-
+\newpage
 ```{r}
 # Shows which lag is most predictive of the next data point. More linear = better predictor
 gglagplot(strikeout_ts)
 ```
-
+\newpage
 ```{r}
 # Shows the correlation of the lag plots (lag numbers on x axis, correlation on y axis)
 ggAcf(strikeout_ts)
 ```
-
+\newpage
 ```{r}
 # Tests if the time-series is simply white noise... p > 0.05 would suggest just white noise
 Box.test(strikeout_ts, lag = 24, fitdf = 0, type = "Lj")
@@ -97,7 +101,7 @@ autoplot(train) +
   ylab("% of ABs Ending in a Strikeout") +
   ggtitle("MLB Strikeouts Training Data: 1871-1991")
 ```
-
+\newpage
 ```{r, warning=FALSE}
 # Plots the training data with different moving averages
 autoplot(train) + 
@@ -111,7 +115,7 @@ autoplot(train) +
   ylab("% of ABs Ending in a Strikeout") +
   ggtitle("MLB Strikeouts Training Data Moving Averages: 1871-1991")
 ```
-
+\newpage
 ```{r, warning=FALSE}
 autoplot(train) + 
   autolayer(ma(train, 1), series = "Data") +
@@ -120,12 +124,13 @@ autoplot(train) +
   ylab("% of ABs Ending in a Strikeout") +
   ggtitle("MLB Strikeouts Training Data 8 yr Moving Average: 1871-1991")
 ```
+\newpage
 ```{r}
 # Plots a 35 year forecast from the 8 year moving average of the training data, along with the full raw time series
 autoplot(forecast(ma(train, 9), h = 35)) +
   autolayer(strikeout_ts, series = "Data")
 ```
-
+\newpage
 ```{r}
 # Plots a 15 year forecast from the 8 year moving average of the full time series, along with the time series
 autoplot(forecast(ma(strikeout_ts, 9), h = 15)) +
