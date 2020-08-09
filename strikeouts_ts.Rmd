@@ -116,7 +116,7 @@ autoplot(train) +
   autolayer(ma(train, 21), series = "20 yr MA") +
   xlab("Season") +
   ylab("% of ABs Ending in a Strikeout") +
-  ggtitle("MLB Strikeouts Training Data Moving Averages: 1871-1991")
+  ggtitle("MLB Strikeouts Training Data Moving Averages: 1920-1999")
 ```
 \newpage
 ```{r, warning=FALSE}
@@ -125,18 +125,24 @@ autoplot(train) +
   autolayer(ma(train, 9), series = "8 yr MA") +
   xlab("Season") +
   ylab("% of ABs Ending in a Strikeout") +
-  ggtitle("MLB Strikeouts Training Data 8 yr Moving Average: 1871-1991")
+  ggtitle("MLB Strikeouts Training Data 8 yr Moving Average: 1920-1999")
 ```
 \newpage
 ```{r}
-# Plots a 35 year forecast from the 8 year moving average of the training data, along with the full raw time series
-autoplot(forecast(ma(train, 9), h = 35)) +
+# Plots a 20 year forecast from the 8 year moving average of the training data, along with the full raw time series
+so_ma_fc <- forecast(ma(train, 9), h = 24)
+autoplot(so_ma_fc) +
   autolayer(strikeout_ts, series = "Data")
 ```
 \newpage
 ```{r}
-# Plots a 15 year forecast from the 8 year moving average of the full time series, along with the time series
-autoplot(forecast(ma(strikeout_ts, 9), h = 15)) +
+accuracy(so_ma_fc, test) %>% kable() %>% kable_styling()
+```
+
+```{r}
+# Plots a 35 year forecast from the 8 year moving average of the training data, along with the full raw time series
+so_ma_fc_extended <- forecast(ma(train, 9), h = 36)
+autoplot(so_ma_fc_extended) +
   autolayer(strikeout_ts, series = "Data")
 ```
 
