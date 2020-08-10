@@ -21,17 +21,17 @@ Cleanliness - 4/10**
 There are four sources of data in this repository:
 
 1. lahmans_baseball_db.sqlite -  
-contains season hitting and pitching stats for every MLB batter and pitcher from 1871-2019
+contains season hitting and pitching [stats](http://www.seanlahman.com/baseball-archive/statistics/) for every MLB batter and pitcher from 1871-2019
 
 2. fangraphs_batting.csv -  
 contains advanced hitting stats for top MLB hitters from 2008-2019
-Acquired from the Fangraphs.com website
+Acquired from the [Fangraphs.com website](https://www.fangraphs.com/leaders.aspx?pos=all&stats=bat&lg=all&qual=y&type=8&season=2020&month=0&season1=2020&ind=0)
 
 3. fangraphs_pitching.csv -  
 contains advanced pitching stats for top MLB pitchers from 2007-2019
-Acquired from the Fangraphs.com website
+Acquired from the [Fangraphs.com website](https://www.fangraphs.com/leaders.aspx?pos=all&stats=pit&lg=all&qual=y&type=8&season=2020&month=0&season1=2020&ind=0&team=0&rost=0&age=0&filter=&players=0&startdate=&enddate=)
 
 4. full_savant_data.csv -  
 contains pitch by pitch data from May 1 - May 7 for every year from 2008-2019
 includes exit velocity and launch angle data for batted balls from 2015-2019
-Acquired from the Baseballsavant.com website, accessed via the baseballr R package
+Acquired from the [Baseballsavant.com website](https://baseballsavant.mlb.com/statcast_search), accessed via the baseballr R package
