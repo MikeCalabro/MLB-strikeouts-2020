@@ -2,7 +2,9 @@
 title: "Visualizing the Increase in MLB Strikeouts Since 2007"
 author: "Michael Calabro"
 date: "8/3/2020"
-output: pdf_document
+output:
+  word_document: default
+  pdf_document: default
 ---
 
 ```{r setup, include=FALSE}

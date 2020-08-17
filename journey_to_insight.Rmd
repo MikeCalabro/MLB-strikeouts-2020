@@ -2,7 +2,8 @@
 title: "Deriving Insight From Lahman's Baseball Database"
 author: "Michael Calabro"
 date: "7/31/2020"
-output: pdf_document
+output: github_document
+always_allow_html: true
 ---
 
 ```{r setup, include=FALSE}
@@ -37,7 +38,7 @@ This "con" keyword now allows me to connect to the database. To view the list of
 dbListTables(con)
 ```
  
-\newpage 
+  
 
 To view data from a specific table, I use the dbGetQuery function. The "batting" table will be key to my analysis, let's check it out.
 
@@ -72,8 +73,6 @@ kable_query <- function(con, query){
  
 As we can see, every row in the batter table consists of a player, a year, and all of the player's batting statistics in that year.  
 
-\newpage
-
 **So What is your question about Strikeouts in the MLB?**
 
 A few years back (in 2018 I believe) I read an article which mentioned the fact that MLB players are striking out more and more every year, always breaking the single season record for total strikeouts. A more updated article, linked [here](https://www.espn.com/mlb/story/_/id/27694758/mlb-sets-strikeout-record-12th-straight-season), notes that this increase in strikeouts has been happening every year since 2008! Let's see if our Lahman data shows the same trend.
@@ -91,7 +90,7 @@ query <-  "
 kable_query(con, query)
 ```
 
-\newpage
+ 
 
 ```{r}
 # Now I can use ggplot, with geom_point to make a scatterplot,
@@ -108,7 +107,7 @@ dbGetQuery(con, query) %>%
 
 So what is causing this increase in strikeouts every year?? That is what I wish to investigate throughout the rest of this document/project.  
 
-\newpage
+ 
 
 **HYPOTHOSES**
 
@@ -257,7 +256,7 @@ query <-  "
 kable_query(con, query)
 ```
 
-\newpage
+ 
 
 ```{r}
 query <-  "
@@ -320,7 +319,7 @@ dbGetQuery(con, query) %>%
 
 ```
 
-\newpage
+ 
 
 Obviously little to no correlation there. Interesting. To do this better I would want to know stats for a year before a contract is signed, but for now this is a fine approximation.
 
